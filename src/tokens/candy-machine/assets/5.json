@@ -1,0 +1,20 @@
+{
+    "name": "The Division Bell",
+    "symbol": "PINK",
+    "description": "\"The Division Bell\" is the fourteenth album by the English progressive rock band Pink Floyd, released on 28 March 1994. The second Pink Floyd album recorded without founding member Roger Waters, The Division Bell was written mostly by guitarist and singer David Gilmour and keyboardist Richard Wright.",
+    "image": "5.jpg",
+    "attributes": [
+        {
+            "trait_type": "year",
+            "value": "1994"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "5.jpg",
+                "type": "image/jpg"
+            }
+        ]
+    }
+}

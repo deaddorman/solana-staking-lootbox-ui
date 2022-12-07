@@ -1,0 +1,20 @@
+{
+    "name": "The Dark Side Of The Moon",
+    "symbol": "PINK",
+    "description": "\"The Dark Side of the Moon\" is the eighth studio album by the English rock band Pink Floyd, released on 1 March 1973 by Harvest Records.",
+    "image": "1.jpg",
+    "attributes": [
+        {
+            "trait_type": "year",
+            "value": "1973"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "1.jpg",
+                "type": "image/jpg"
+            }
+        ]
+    }
+}

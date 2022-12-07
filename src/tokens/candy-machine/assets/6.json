@@ -1,0 +1,20 @@
+{
+    "name": "A Saucerful Of Secrets",
+    "symbol": "PINK",
+    "description": "\"A Saucerful of Secrets\" is the second studio album by the English rock band Pink Floyd, released on 28 June 1968. During recording, the mental health of singer and guitarist Syd Barrett deteriorated, so David Gilmour was recruited; Barrett left the band before the album's completion.",
+    "image": "6.jpg",
+    "attributes": [
+        {
+            "trait_type": "year",
+            "value": "1968"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "6.jpg",
+                "type": "image/jpg"
+            }
+        ]
+    }
+}

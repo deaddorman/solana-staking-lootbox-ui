@@ -1,0 +1,20 @@
+{
+    "name": "Welcome To The Machine",
+    "symbol": "PINK",
+    "description": "\"Welcome to the Machine\" is the second song on Pink Floyd's 1975 album \"Wish You Were Here\". It features heavily processed synthesizers and acoustic guitars, as well as a wide range of tape effects. Both the music and the lyrics were written by bassist Roger Waters.",
+    "image": "0.jpg",
+    "attributes": [
+        {
+            "trait_type": "year",
+            "value": "1975"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "0.jpg",
+                "type": "image/jpg"
+            }
+        ]
+    }
+}

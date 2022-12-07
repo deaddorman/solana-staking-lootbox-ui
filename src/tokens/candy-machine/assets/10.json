@@ -1,0 +1,20 @@
+{
+    "name": "Obscured by Clouds",
+    "symbol": "PINK",
+    "description": "\"Obscured by Clouds\" is the seventh studio album by the English progressive rock band Pink Floyd, released on 2 June 1972 by Harvest and Capitol Records. It is shorter than some of Pink Floyd's previous albums, and makes heavy use of the acoustic guitar.",
+    "image": "10.jpg",
+    "attributes": [
+        {
+            "trait_type": "year",
+            "value": "1972"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "10.jpg",
+                "type": "image/jpg"
+            }
+        ]
+    }
+}

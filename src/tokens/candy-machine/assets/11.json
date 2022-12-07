@@ -1,0 +1,20 @@
+{
+    "name": "A Momentary Laps Of Reason",
+    "symbol": "PINK",
+    "description": "\"A Momentary Lapse of Reason\" is the thirteenth studio album by the English progressive rock band Pink Floyd, released on September 1987. It was the first Pink Floyd album recorded without founding member Roger Waters, who departed in 1985.",
+    "image": "11.jpg",
+    "attributes": [
+        {
+            "trait_type": "year",
+            "value": "1987"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "11.jpg",
+                "type": "image/jpg"
+            }
+        ]
+    }
+}

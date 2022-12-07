@@ -1,0 +1,20 @@
+{
+    "name": "Pulse",
+    "symbol": "PINK",
+    "description": "\"Pulse\" (stylised as P·U·L·S·E) is the third live album by the English rock band Pink Floyd. It was released on May 1995. The album was recorded during the European leg of Pink Floyd's Division Bell Tour in 1994.",
+    "image": "7.jpg",
+    "attributes": [
+        {
+            "trait_type": "year",
+            "value": "1995"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "7.jpg",
+                "type": "image/jpg"
+            }
+        ]
+    }
+}

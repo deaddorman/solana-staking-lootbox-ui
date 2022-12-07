@@ -1,0 +1,20 @@
+{
+    "name": "Atom Heart Mother",
+    "symbol": "PINK",
+    "description": "\"Atom Heart Mother\" is the fifth studio album by the English progressive rock band Pink Floyd. It was released by Harvest on October 1970. It was recorded at EMI Studios in London, England, and was the band's first album to reach number 1 in the UK, while it reached number 55 in the US, eventually going gold there.",
+    "image": "8.jpg",
+    "attributes": [
+        {
+            "trait_type": "year",
+            "value": "1970"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "8.jpg",
+                "type": "image/jpg"
+            }
+        ]
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Meddle",
+    "symbol": "PINK",
+    "description": "\"Meddle\" is the sixth studio album by English rock band Pink Floyd, released by Harvest Records. The album was produced between the band's touring commitments, from January to August 1971 at a series of locations around London, including EMI Studios and Morgan Studios. ",
+    "image": "9.jpg",
+    "attributes": [
+        {
+            "trait_type": "year",
+            "value": "1971"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "9.jpg",
+                "type": "image/jpg"
+            }
+        ]
+    }
+}

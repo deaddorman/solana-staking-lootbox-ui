@@ -1,0 +1,20 @@
+{
+    "name": "Animals",
+    "symbol": "PINK",
+    "description": "\"Animals\" is the tenth studio album by the English rock band Pink Floyd, released on 21 January 1977 through Harvest and Columbia Records. It is both a progressive rock album and a concept album, focusing on the social-political conditions of mid-1970s Britain.",
+    "image": "3.jpg",
+    "attributes": [
+        {
+            "trait_type": "year",
+            "value": "1977"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "3.jpg",
+                "type": "image/jpg"
+            }
+        ]
+    }
+}

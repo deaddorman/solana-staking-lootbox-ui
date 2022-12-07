@@ -1,0 +1,113 @@
+{
+  "program": {
+    "candyMachine": "EffvnFd2wSJEGYphmV7a6Nta4W8rNntkF94WxLeTwoPF",
+    "candyMachineCreator": "HiXGPD2VQzGHigHEQEwJLRAAsM7pDYeNhk7uXJ9ABVh4",
+    "collectionMint": "4dTs2oJvaP7XgBeVDnvHCKqRFvuxAhcMHYzzLjXe5txt"
+  },
+  "items": {
+    "-1": {
+      "name": "Pink Floyd Collection",
+      "image_hash": "30aa5cdd616866272944f6a02a7b38e4f0b6d1cc6ca42464816696535ebbe460",
+      "image_link": "https://arweave.net/VeVUPZvnofW3BDDG7rmo0NWRfRIDp96HD5as1Rl4wYA?ext=jpg",
+      "metadata_hash": "66abef816bf25b096dd21e7cfae48af984f42a540b1541c8cd683d92cf7f2e73",
+      "metadata_link": "https://arweave.net/tKxfDxz2fK1T1kDSGexEob57yASToNTWwjGseuUJvXE",
+      "onChain": true
+    },
+    "0": {
+      "name": "Welcome To The Machine",
+      "image_hash": "f3e0f6319e0c414e498d3ed56afdc5c1cb507bf7121a14821c9512ff86b118f0",
+      "image_link": "https://arweave.net/rbLMGswYi26B-UZeZDFTA0rxB0ic46tWNx955mPueNc?ext=jpg",
+      "metadata_hash": "6998704917e81096aa115e336e53e7299fd4157ccf8e55061da8537aff96cd47",
+      "metadata_link": "https://arweave.net/fk8Ca8flgxGlwusNLpiwZMcK3YSHXnf1U2UvWSAEpHQ",
+      "onChain": true
+    },
+    "1": {
+      "name": "The Dark Side Of The Moon",
+      "image_hash": "cd1925c1e454509fe68eb4ee5b8862b2cb7b0be066dcfa86c1f8c62b4569e674",
+      "image_link": "https://arweave.net/iKmFgyoy95iEctS2TOcxA9Sx47qaL-tOhiWlzW-ShrE?ext=jpg",
+      "metadata_hash": "2c09074bada85e63b747fe928d10f532f23046efea9e9e078aad906e3107b889",
+      "metadata_link": "https://arweave.net/-SrpMEE3T3eMAdG8v72ZC56kIAXC3dg6zVvn_vBRxpI",
+      "onChain": true
+    },
+    "2": {
+      "name": "Wish You Were Here",
+      "image_hash": "4a2ef3a622b3d4367a1cead5cdd09c885f115ad805d3116c63df45f4561bf2d2",
+      "image_link": "https://arweave.net/m-H-htk_lA6e3c5rAS3wq_lt781vkJQtsXhIs62yjlQ?ext=jpg",
+      "metadata_hash": "5b95454826f74f33b46c90ee092f61b96c2de28aad34a6bc4a962a19bb8fca8a",
+      "metadata_link": "https://arweave.net/IeKNU8t6L1WboEdbMbqP8-jcPPZgkw-SF_99jvfio-A",
+      "onChain": true
+    },
+    "3": {
+      "name": "Animals",
+      "image_hash": "4f490562c55dd81822f5412efc3148b725b2ca8345baea111b9b7321a55d7298",
+      "image_link": "https://arweave.net/ItTyN5MmQpguC__B2tZHL9Nwnvv3ocvhYH_JB6Jl9ak?ext=jpg",
+      "metadata_hash": "ce46ce2b9a9327a1c6a262b7ea813bf8ed08f98455fd871d382e6b02a023cc27",
+      "metadata_link": "https://arweave.net/jmVjv28aTH0ZFT9F3ZtP9GaLyLbUDB66ygiYYWBLGRI",
+      "onChain": true
+    },
+    "4": {
+      "name": "Pink Floyd The Wall",
+      "image_hash": "8831438dfcc159f8d88713998a6795e1d0380c1724c5ccc7170e472082d97a83",
+      "image_link": "https://arweave.net/iKgsEibbYHNNXDwp8aUdCNmTkbZGkE97Oquadieq1OA?ext=jpg",
+      "metadata_hash": "f2c4c2fa067c2199e997fc35106fe9680641872b2d35e3bc9a8d8f64280ed9b9",
+      "metadata_link": "https://arweave.net/QJpAAoYjcGlGNONIexm-qaeiZ6rYHsUdEH1P9VUBLw0",
+      "onChain": true
+    },
+    "5": {
+      "name": "The Division Bell",
+      "image_hash": "a0a6082916714f2c85954b0069cfff78e5c6befacb73a2a1acd87e3d851a9a13",
+      "image_link": "https://arweave.net/NhdP2OIcU0YpsqBLNwwreLt3jQGYU-SMRT4TmAVLMKU?ext=jpg",
+      "metadata_hash": "df9967079b38e61ee7f4c193843d4667c0d3d768628bb6b03950d6b336e7c257",
+      "metadata_link": "https://arweave.net/sVGzqzqdwipGmfRKCiXAMLkLZlqdTlDXUnybW3x_HEs",
+      "onChain": true
+    },
+    "6": {
+      "name": "A Saucerful Of Secrets",
+      "image_hash": "9ca1c07300e900cc283598e4dc025adb6367266e94d1e01ff9b421c888f31307",
+      "image_link": "https://arweave.net/hp8MJDyCrz3aMGQEKnnbY8uQiHya1F4u9M9wIgePbdc?ext=jpg",
+      "metadata_hash": "bb438f8bfc656707c77c776c4c1ef9e3f2480e81b9113803f486b3dd3aeadffa",
+      "metadata_link": "https://arweave.net/kx76Lv388fFx9NkGExWmvF9cJFwOo9fsUCIC4M6eUHc",
+      "onChain": true
+    },
+    "7": {
+      "name": "Pulse",
+      "image_hash": "93f0a31b0e52bc7c809fe7f92e904663e584dee2192a8eb6ef20838e0e07a640",
+      "image_link": "https://arweave.net/9_g2g61VXd7pXPdR8qmHw6eP7NkWzRwwVk9awnXvpxE?ext=jpg",
+      "metadata_hash": "c0f345e225b6ff0b91b76f483ad3a131aafa697d4fb7dbedbd3712ad84f61f1f",
+      "metadata_link": "https://arweave.net/S2aoD0YszoIaSswMZ_ikW48aA53kpddNtIPcJ1dFPqQ",
+      "onChain": true
+    },
+    "8": {
+      "name": "Atom Heart Mother",
+      "image_hash": "c6ce0846882c6b89146252738d9932055eaece10c7fdb59045f48f2f5c007808",
+      "image_link": "https://arweave.net/DTGg3pfBdl13WCNdIFsjzx-X5liPdSk13FH3gEKbzCM?ext=jpg",
+      "metadata_hash": "d9f2d5d147e8cd1e560bd24a256e75a1f067dcb7aaf453ec5f4bc98a7355eacd",
+      "metadata_link": "https://arweave.net/WXNR7XUOFcF0aBO6UJ5AZzAnFtbJzSMwktKLZ400e6Q",
+      "onChain": true
+    },
+    "9": {
+      "name": "Meddle",
+      "image_hash": "e51e00c12fb79256fed897e8961bfcf6af1320f61164f5e94d83c431cdae50a2",
+      "image_link": "https://arweave.net/SHDsSzmCxc_rSxZqHY79xGQPFh3v1PexAOM307tqgx8?ext=jpg",
+      "metadata_hash": "1c6c54b89aff5d127cc2c9f15a9ed47a8d1a2c89c8fec08d68dec394d2ae8af8",
+      "metadata_link": "https://arweave.net/7S8_q0bqK2bbh69oaS877CsMrnFHKZVDoSUR6M16oqI",
+      "onChain": true
+    },
+    "10": {
+      "name": "Obscured by Clouds",
+      "image_hash": "28bbfbc9c9ca6baaf4750a9de2ba8799c544ada6df8fa626c704ebf9f5660394",
+      "image_link": "https://arweave.net/BynbyYaa8vh5GbgSGLa_w-zHzCJ2efcysC4CKD273Js?ext=jpg",
+      "metadata_hash": "1ae4f5d6fb6f126c6a39e0c97b8b9a1a66eaa1347c87e93333740bde169548e9",
+      "metadata_link": "https://arweave.net/pMpY3V50W3Y6yXgvu-H1ZKhPb4e3dTDKXLFDsHUEqz0",
+      "onChain": true
+    },
+    "11": {
+      "name": "A Momentary Laps Of Reason",
+      "image_hash": "2f4586fda818e4f0ae0f15db8a369e1eb6c908a1609908812c0160b10f292ed6",
+      "image_link": "https://arweave.net/C2wdo4wQjaVBdqDk5cjU2NucdnEaa2pyQVQJgOdwHf0?ext=jpg",
+      "metadata_hash": "6c67a789ccbafe7434bae490e00cf06b2baa7cb0c7c8a9dbfc9f1a72f2a3abcc",
+      "metadata_link": "https://arweave.net/AJzbYVpFQF5hq987QmrQNTG4H5iT3SxcQKD5WHnxjEk",
+      "onChain": true
+    }
+  }
+}

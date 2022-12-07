@@ -1,0 +1,20 @@
+{
+    "name": "Wish You Were Here",
+    "symbol": "PINK",
+    "description": "\"Wish You Were Here\" is the ninth studio album by the English rock band Pink Floyd, released on 12 September 1975 through Harvest Records and Columbia Records. The themes include alienation and criticism of the music business and a tribute to founding member, Syd Barrett.",
+    "image": "2.jpg",
+    "attributes": [
+        {
+            "trait_type": "year",
+            "value": "1975"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "2.jpg",
+                "type": "image/jpg"
+            }
+        ]
+    }
+}
