@@ -1,4 +1,9 @@
-# NFT Solana Marketplace
+# Pink Floyd NFT Collection
 
-- nvm use 16
+Solana, Metaplex and CandyMachine
 
+### Usage
+
+- `nvm use 16`
+- `npm install`
+- `npm run dev`
