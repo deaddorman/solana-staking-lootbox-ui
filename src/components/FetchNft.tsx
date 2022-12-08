@@ -10,17 +10,19 @@ export const FetchNft: FC = () => {
   const wallet = useWallet()
   const metaplex = Metaplex.make(connection).use(walletAdapterIdentity(wallet))
 
+  const [isLoading, setIsLoading] = useState(true)
+
   const fetchNfts = async () => {
     if (!wallet.connected) {
       return
     }
 
+    setIsLoading(true)
+
     // fetch NFTs for connected wallet
     const nfts = await metaplex
       .nfts()
       .findAllByOwner({ owner: wallet.publicKey })
-
-    console.log(nfts)
 
     // fetch off chain metadata for each NFT
     let nftData = []
@@ -32,6 +34,8 @@ export const FetchNft: FC = () => {
 
     // set state
     setNftData(nftData)
+
+    setIsLoading(false)
   }
 
   // fetch nfts when connected wallet changes
@@ -41,7 +45,14 @@ export const FetchNft: FC = () => {
 
   return (
     <div>
-      {nftData && (
+
+      {isLoading && (
+        <div>
+          Loading NFTs...
+        </div>
+      )}
+
+      {!isLoading && nftData && (
         <div className={styles.gridNFT}>
           {nftData.map((nft) => (
             <div>

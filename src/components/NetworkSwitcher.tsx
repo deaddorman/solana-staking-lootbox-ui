@@ -5,14 +5,12 @@ import { useNetworkConfiguration } from '../contexts/NetworkConfigurationProvide
 const NetworkSwitcher: FC = () => {
   const { networkConfiguration, setNetworkConfiguration } = useNetworkConfiguration();
 
-  console.log(networkConfiguration);
-
   return (
     <label className="cursor-pointer label">
       <a>Network</a>
-      <select             
+      <select
         value={networkConfiguration}
-        onChange={(e) => setNetworkConfiguration(e.target.value)} 
+        onChange={(e) => setNetworkConfiguration(e.target.value)}
         className="select max-w-xs"
       >
         <option value="mainnet-beta">main</option>

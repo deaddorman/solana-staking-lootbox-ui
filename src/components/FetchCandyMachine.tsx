@@ -13,13 +13,16 @@ export const FetchCandyMachine: FC = () => {
   const walletAdapter = useWallet()
   const { connection } = useConnection()
 
+  const [isLoading, setIsLoading] = useState(true)
+
   // const metaplex = Metaplex.make(connection)
   const metaplex = Metaplex.make(connection).use(walletAdapterIdentity(walletAdapter))
-
   const [isMinting, setIsMinting] = useState(false)
 
   // fetch candymachine by address
   const fetchCandyMachine = async () => {
+
+    setIsLoading(true)
 
     // Set page to 1 - we wanna be at the first page whenever we fetch a new Candy Machine
     setPage(1)
@@ -31,8 +34,11 @@ export const FetchCandyMachine: FC = () => {
         .findByAddress({ address: new PublicKey(candyMachineAddress) })
 
       setCandyMachineData(candyMachine)
+
+      setIsLoading(false)
     } catch (e) {
       alert("Please submit a valid CMv2 address.")
+      setIsLoading(false)
     }
   }
 
@@ -85,27 +91,29 @@ export const FetchCandyMachine: FC = () => {
   // Mint NFTS
   const mintNewNFT = async () => {
     setIsMinting(true)
-
-    console.log(candyMachineData)
-
     const nft = await metaplex.candyMachinesV2().mint({ candyMachine: candyMachineData })
     setIsMinting(false)
   }
 
   return (
     <div>
-      {/* <input
-        type="text"
-        className="form-control block mb-2 w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none text-center"
-        placeholder="Enter Candy Machine v2 Address"
-        onChange={(e) => setCandyMachineAddress(e.target.value)}
-      /> */}
-      <button
-        className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
-        onClick={mintNewNFT}
-      >
-        Mint NFT
-      </button>
+
+      {!isLoading && !isMinting && (
+        <button
+          className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
+          onClick={mintNewNFT}
+        >
+          Mint NFT <small>(0.3 SOL)</small>
+        </button>
+      )}
+
+      {isMinting && (
+        <button
+          className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
+        >
+          Minting NFT...
+        </button>
+      )}
 
       {candyMachineData && (
         <div className="flex flex-col items-center justify-center p-5">
@@ -113,7 +121,13 @@ export const FetchCandyMachine: FC = () => {
         </div>
       )}
 
-      {pageItems && (
+      {isLoading && (
+        <div>
+          Loading NFTs Collection...
+        </div>
+      )}
+
+      {!isLoading && pageItems && (
         <div>
           <div className={styles.gridNFT}>
             {pageItems.map((nft) => (
