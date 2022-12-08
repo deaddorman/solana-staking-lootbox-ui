@@ -131,7 +131,7 @@ export const FetchCandyMachine: FC = () => {
         <div>
           <div className={styles.gridNFT}>
             {pageItems.map((nft) => (
-              <div>
+              <div key={nft.name}>
                 <ul>{nft.name}</ul>
                 <img src={nft.image} />
               </div>
