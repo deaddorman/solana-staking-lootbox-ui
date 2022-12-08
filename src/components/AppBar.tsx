@@ -98,7 +98,7 @@ export const AppBar: FC = (props) => {
               <a className="btn btn-ghost btn-sm rounded-btn">Home</a>
             </Link>
             <Link href="/display">
-              <a className="btn btn-ghost btn-sm rounded-btn">Display NFT</a>
+              <a className="btn btn-ghost btn-sm rounded-btn">My NFTs</a>
             </Link>
             <Link href="/candymachine">
               <a className="btn btn-ghost btn-sm rounded-btn">Candy Machine</a>
