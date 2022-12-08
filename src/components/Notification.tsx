@@ -7,7 +7,6 @@ import {
 import { XIcon } from '@heroicons/react/solid'
 import useNotificationStore from '../stores/useNotificationStore'
 import { useConnection } from '@solana/wallet-adapter-react';
-import { getExplorerUrl } from '../utils/explorer'
 import { useNetworkConfiguration } from 'contexts/NetworkConfigurationProvider';
 
 const NotificationList = () => {
@@ -49,11 +48,6 @@ const Notification = ({ type, message, description, txid, onHide }) => {
   const { connection } = useConnection();
   const { networkConfiguration } = useNetworkConfiguration();
 
-  // TODO: we dont have access to the network or endpoint here.. 
-  // getExplorerUrl(connection., txid, 'tx')
-  // Either a provider, context, and or wallet adapter related pro/contx need updated
-
-
   useEffect(() => {
     const id = setTimeout(() => {
       onHide()
@@ -86,7 +80,7 @@ const Notification = ({ type, message, description, txid, onHide }) => {
             ) : null}
             {txid ? (
               <div className="flex flex-row">
-         
+
                 <a
                   href={'https://explorer.solana.com/tx/' + txid + `?cluster=${networkConfiguration}`}
                   target="_blank"
