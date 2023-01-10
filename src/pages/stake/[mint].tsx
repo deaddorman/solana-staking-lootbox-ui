@@ -12,7 +12,6 @@ const Stake: NextPage<StakeProps> = ({ mintAddress }) => {
 
   setTimeout(() => {
     console.log('mintAddress', mintAddress)
-
   }, 1000)
 
 
@@ -32,16 +31,16 @@ interface StakeProps {
 
 Stake.getInitialProps = ctx => {
 
-  const { stake } = ctx.query
+  const { mint } = ctx.query
 
-  if (!stake) {
+  if (!mint) {
     ctx.res.writeHead(302, { Location: '/display' });
     ctx.res.end();
   }
 
   try {
-    const _ = new PublicKey(stake)
-    return { mintAddress: stake as string }
+    const _ = new PublicKey(mint)
+    return { mintAddress: mint as string }
   } catch {
     ctx.res.writeHead(302, { Location: '/display' });
     ctx.res.end();
