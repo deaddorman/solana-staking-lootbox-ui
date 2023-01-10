@@ -3,12 +3,18 @@ import Router from 'next/router'
 import { useRouter } from 'next/router'
 import { useEffect } from "react"
 import { PublicKey } from "@solana/web3.js"
-import { StakeView } from "../views"
+import { StakeView } from "../../views"
 import Head from "next/head"
 
-const Stake: NextPage<StakeProps> = ({ mint }) => {
+const Stake: NextPage<StakeProps> = ({ mintAddress }) => {
 
   // 5vrphUhxM9R6H4sGDKZWP2d91k1djNfjSsGVPLHHYJNS
+
+  setTimeout(() => {
+    console.log('mintAddress', mintAddress)
+
+  }, 1000)
+
 
   return (
     <div>
@@ -21,21 +27,21 @@ const Stake: NextPage<StakeProps> = ({ mint }) => {
 }
 
 interface StakeProps {
-  mint: string
+  mintAddress: string
 }
 
 Stake.getInitialProps = ctx => {
 
-  const { mint  } = ctx.query
+  const { stake } = ctx.query
 
-  if (!mint) {
+  if (!stake) {
     ctx.res.writeHead(302, { Location: '/display' });
     ctx.res.end();
   }
 
   try {
-    const _ = new PublicKey(mint)
-    return { mint: mint as string }
+    const _ = new PublicKey(stake)
+    return { mintAddress: stake as string }
   } catch {
     ctx.res.writeHead(302, { Location: '/display' });
     ctx.res.end();
