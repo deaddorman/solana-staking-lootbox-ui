@@ -1,19 +1,27 @@
 import type { NextPage } from "next"
-import Router from 'next/router'
-import { useRouter } from 'next/router'
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { PublicKey } from "@solana/web3.js"
 import { StakeView } from "../../views"
+import { useWallet, useConnection } from "@solana/wallet-adapter-react"
 import Head from "next/head"
 
-const Stake: NextPage<StakeProps> = ({ mintAddress }) => {
+const Stake: NextPage<StakeProps> = ({ mint }) => {
 
   // 5vrphUhxM9R6H4sGDKZWP2d91k1djNfjSsGVPLHHYJNS
 
-  setTimeout(() => {
-    console.log('mintAddress', mintAddress)
-  }, 1000)
+  const [mintAddress, setMintAddress] = useState<PublicKey>(null)
 
+  const wallet = useWallet()
+  const { connection } = useConnection()
+
+
+  useEffect(() => {
+    setTimeout(() => setMintAddress(new PublicKey(mint)))
+  }, [])
+
+  useEffect(() => {
+    console.log('mintAddress', mintAddress)
+  }, [mintAddress])
 
   return (
     <div>
@@ -26,7 +34,7 @@ const Stake: NextPage<StakeProps> = ({ mintAddress }) => {
 }
 
 interface StakeProps {
-  mintAddress: string
+  mint: string
 }
 
 Stake.getInitialProps = ctx => {
@@ -40,7 +48,7 @@ Stake.getInitialProps = ctx => {
 
   try {
     const _ = new PublicKey(mint)
-    return { mintAddress: mint as string }
+    return { mint: mint as string }
   } catch {
     ctx.res.writeHead(302, { Location: '/display' });
     ctx.res.end();
