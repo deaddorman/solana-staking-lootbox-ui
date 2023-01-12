@@ -1,26 +1,46 @@
 import type { NextPage } from "next"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useMemo } from "react"
 import { PublicKey } from "@solana/web3.js"
 import { StakeView } from "../../views"
 import { useWallet, useConnection } from "@solana/wallet-adapter-react"
+import { Metaplex, walletAdapterIdentity } from "@metaplex-foundation/js"
 import Head from "next/head"
 
 const Stake: NextPage<StakeProps> = ({ mint }) => {
 
   // 5vrphUhxM9R6H4sGDKZWP2d91k1djNfjSsGVPLHHYJNS
 
-  const [mintAddress, setMintAddress] = useState<PublicKey>(null)
+  const [mintAddress, setMintAddress] = useState<PublicKey>()
+  const [metadata, setMetadata] = useState<any>(null)
 
-  const wallet = useWallet()
   const { connection } = useConnection()
+  const wallet = useWallet()
 
+  const metaplex = useMemo(() => {
+    return Metaplex.make(connection).use(walletAdapterIdentity(wallet))
+  }, [connection, wallet])
 
   useEffect(() => {
-    setTimeout(() => setMintAddress(new PublicKey(mint)))
+    console.log('mint', mint)
+    setMintAddress(new PublicKey(mint))
   }, [])
 
   useEffect(() => {
-    console.log('mintAddress', mintAddress)
+    if (mintAddress) {
+      metaplex
+        .nfts()
+        .findByMint({ mintAddress: mintAddress })
+        .then((nft) => {
+
+          console.log('nft', nft)
+
+          fetch(nft.uri)
+            .then((res) => res.json())
+            .then((m) => {
+              setMetadata(m)
+            })
+        })
+    }
   }, [mintAddress])
 
   return (
@@ -28,7 +48,9 @@ const Stake: NextPage<StakeProps> = ({ mint }) => {
       <Head>
         <title>Stake</title>
       </Head>
-      <StakeView />
+
+      {metadata ? <StakeView children={metadata} /> : <p className="text-center m-4">Loading...</p>}
+
     </div>
   )
 }
