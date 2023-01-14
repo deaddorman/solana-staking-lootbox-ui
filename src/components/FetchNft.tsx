@@ -1,9 +1,15 @@
 import { useConnection, useWallet } from "@solana/wallet-adapter-react"
 import { Metaplex, walletAdapterIdentity } from "@metaplex-foundation/js"
 import { FC, useEffect, useState } from "react"
+import { PublicKey } from "@solana/web3.js"
+import { CANDY_MACHINE_ADDRESS, STAKE_MINT } from '../utils/constants';
+import Link from "next/link"
 import styles from "../styles/custom.module.css"
 
 export const FetchNft: FC = () => {
+
+  const [candyMachineAddress, setCandyMachineAddress] = useState(new PublicKey(CANDY_MACHINE_ADDRESS))
+
   const [nftData, setNftData] = useState(null)
 
   const { connection } = useConnection()
@@ -19,26 +25,30 @@ export const FetchNft: FC = () => {
 
     setIsLoading(true)
 
-    // fetch NFTs for connected wallet
-    const nfts = await metaplex
+    // Fetch NFTs for connected wallet
+    const allOwnerNFTs = await metaplex
       .nfts()
       .findAllByOwner({ owner: wallet.publicKey })
 
-    // fetch off chain metadata for each NFT
+    const nftsByCollectionId = []
+    allOwnerNFTs.forEach((nft: any) => {
+      if (nft.collection?.address.toString() == STAKE_MINT.toString())
+        nftsByCollectionId.push(nft)
+    })
+
+    // Fetch off-chain metadata for each NFT
     let nftData = []
-    for (let i = 0; i < nfts.length; i++) {
-      let fetchResult = await fetch(nfts[i].uri)
-      let json = await fetchResult.json()
-      nftData.push(json)
+    for (let i = 0; i < nftsByCollectionId.length; i++) {
+      let fetchResult = await fetch(nftsByCollectionId[i].uri)
+      let nft = await fetchResult.json()
+      nftData.push({...nft, ...{ mintAddress: nftsByCollectionId[i].mintAddress.toString() }})
     }
 
-    // set state
     setNftData(nftData)
-
     setIsLoading(false)
   }
 
-  // fetch nfts when connected wallet changes
+  // Fetch nfts when connected wallet changes
   useEffect(() => {
     fetchNfts()
   }, [wallet])
@@ -55,10 +65,14 @@ export const FetchNft: FC = () => {
       {!isLoading && nftData && (
         <div className={styles.gridNFT}>
           {nftData.map((nft) => (
-            <div key={nft.name}>
-              <ul>{nft.name}</ul>
-              <img src={nft.image} />
-            </div>
+            <Link href={`/stake/${encodeURIComponent(nft.mintAddress)}`}>
+              <a>
+                <div key={nft.name}>
+                  <ul>{nft.name}</ul>
+                  <img src={nft.image} />
+                </div>
+              </a>
+            </Link>
           ))}
         </div>
       )}
