@@ -6,7 +6,7 @@ const Collection: NextPage = (props) => {
   return (
     <div>
       <Head>
-        <title>Solana Scaffold</title>
+        <title>Pink Floyd NFT Collection</title>
         <meta name="description" content="Basic Functionality" />
       </Head>
       <CollectionView />

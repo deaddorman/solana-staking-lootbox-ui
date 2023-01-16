@@ -64,7 +64,7 @@ Stake.getInitialProps = ctx => {
   const { mint } = ctx.query
 
   if (!mint) {
-    ctx.res.writeHead(302, { Location: '/display' });
+    ctx.res.writeHead(302, { Location: '/my-nfts' });
     ctx.res.end();
   }
 
@@ -72,7 +72,7 @@ Stake.getInitialProps = ctx => {
     const _ = new PublicKey(mint)
     return { mint: mint as string }
   } catch {
-    ctx.res.writeHead(302, { Location: '/display' });
+    ctx.res.writeHead(302, { Location: '/my-nfts' });
     ctx.res.end();
   }
 }
