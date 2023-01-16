@@ -1,5 +1,4 @@
 import { FC } from "react"
-import { FetchNft } from "../../components/FetchNft"
 
 export const StakeView: FC = ({ children }) => {
 

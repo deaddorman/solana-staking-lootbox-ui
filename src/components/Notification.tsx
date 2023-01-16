@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react'
-import {
-  CheckCircleIcon,
-  InformationCircleIcon,
-  XCircleIcon,
-} from '@heroicons/react/outline'
+import { CheckCircleIcon, InformationCircleIcon, XCircleIcon } from '@heroicons/react/outline'
 import { XIcon } from '@heroicons/react/solid'
-import useNotificationStore from '../stores/useNotificationStore'
 import { useConnection } from '@solana/wallet-adapter-react';
 import { useNetworkConfiguration } from 'contexts/NetworkConfigurationProvider';
+import useNotificationStore from '../stores/useNotificationStore'
+
 
 const NotificationList = () => {
   const { notifications, set: setNotificationStore } = useNotificationStore(

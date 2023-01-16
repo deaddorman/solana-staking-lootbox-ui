@@ -6,7 +6,7 @@ import { CANDY_MACHINE_ADDRESS, STAKE_MINT } from '../utils/constants';
 import Link from "next/link"
 import styles from "../styles/custom.module.css"
 
-export const FetchNft: FC = () => {
+export const FetchMyNFTs: FC = () => {
 
   const [candyMachineAddress, setCandyMachineAddress] = useState(new PublicKey(CANDY_MACHINE_ADDRESS))
 
@@ -18,7 +18,7 @@ export const FetchNft: FC = () => {
 
   const [isLoading, setIsLoading] = useState(true)
 
-  const fetchNfts = async () => {
+  const fetchMyNFTs = async () => {
     if (!wallet.connected) {
       return
     }
@@ -50,7 +50,7 @@ export const FetchNft: FC = () => {
 
   // Fetch nfts when connected wallet changes
   useEffect(() => {
-    fetchNfts()
+    fetchMyNFTs()
   }, [wallet])
 
   return (
