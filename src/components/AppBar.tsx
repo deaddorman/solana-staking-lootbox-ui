@@ -10,7 +10,6 @@ export const AppBar: FC = (props) => {
 
   return (
     <div>
-      {/* NavBar / Header */}
       <div className="navbar flex flex-row md:mb-2 shadow-lg bg-neutral text-neutral-content">
         <div className="navbar-start">
           <label htmlFor="my-drawer" className="btn btn-square btn-ghost">
@@ -97,12 +96,13 @@ export const AppBar: FC = (props) => {
             <Link href="/">
               <a className="btn btn-ghost btn-sm rounded-btn">Home</a>
             </Link>
+            <Link href="/collection">
+              <a className="btn btn-ghost btn-sm rounded-btn">The Collection</a>
+            </Link>
             <Link href="/display">
               <a className="btn btn-ghost btn-sm rounded-btn">My NFTs</a>
             </Link>
-            <Link href="/candymachine">
-              <a className="btn btn-ghost btn-sm rounded-btn">Candy Machine</a>
-            </Link>
+
           </div>
         </div>
 

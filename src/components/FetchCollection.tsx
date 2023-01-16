@@ -5,7 +5,7 @@ import { Metaplex, walletAdapterIdentity, CandyMachineV2 } from "@metaplex-found
 import { CANDY_MACHINE_ADDRESS } from '../utils/constants';
 import styles from "../styles/custom.module.css"
 
-export const FetchCandyMachine: FC = () => {
+export const FetchCollection: FC = () => {
 
   const [candyMachineAddress, setCandyMachineAddress] = useState(CANDY_MACHINE_ADDRESS)
   const [candyMachineData, setCandyMachineData] = useState<CandyMachineV2>(null)
@@ -21,7 +21,7 @@ export const FetchCandyMachine: FC = () => {
   const [isMinting, setIsMinting] = useState(false)
 
   // Fetch CandyMachine by address
-  const fetchCandyMachine = async () => {
+  const fetchCollection = async () => {
 
     setIsLoading(true)
     setPage(1)
@@ -69,7 +69,7 @@ export const FetchCandyMachine: FC = () => {
 
   // Fetch placeholder candy machine on load
   useEffect(() => {
-    fetchCandyMachine()
+    fetchCollection()
   }, [])
 
   // Fetch metadata for NFTs when page or candy machine changes

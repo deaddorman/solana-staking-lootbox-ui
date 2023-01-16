@@ -1,16 +1,15 @@
 import { FC } from "react"
-import { FetchCandyMachine } from "../../components/FetchCandyMachine"
+import { FetchCollection } from "../../components/FetchCollection"
 
-export const CandyMachineView: FC = ({}) => {
+export const CollectionView: FC = ({}) => {
   return (
     <div className="md:hero mx-auto p-4">
       <div className="md:hero-content flex flex-col">
         <h1 className="text-center text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
-          Candy Machine
+          Pink Floyd Collection
         </h1>
-        {/* CONTENT GOES HERE */}
         <div className="text-center">
-          <FetchCandyMachine />
+          <FetchCollection />
         </div>
       </div>
     </div>
