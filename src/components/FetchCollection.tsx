@@ -3,7 +3,6 @@ import { FC, useEffect, useState } from "react"
 import { PublicKey } from "@solana/web3.js"
 import { Metaplex, walletAdapterIdentity, CandyMachineV2 } from "@metaplex-foundation/js"
 import { CANDY_MACHINE_ADDRESS } from '../utils/constants';
-import styles from "../styles/custom.module.css"
 
 export const FetchCollection: FC = () => {
 
@@ -121,7 +120,7 @@ export const FetchCollection: FC = () => {
 
       {!isLoading && pageItems && (
         <div>
-          <div className={styles.gridNFT}>
+          <div className="gridNFT">
             {pageItems.map((nft) => (
               <div key={nft.name}>
                 <ul>{nft.name}</ul>

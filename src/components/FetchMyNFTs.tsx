@@ -4,7 +4,6 @@ import { FC, useEffect, useState } from "react"
 import { PublicKey } from "@solana/web3.js"
 import { CANDY_MACHINE_ADDRESS, STAKE_MINT } from '../utils/constants';
 import Link from "next/link"
-import styles from "../styles/custom.module.css"
 
 export const FetchMyNFTs: FC = () => {
 
@@ -63,7 +62,7 @@ export const FetchMyNFTs: FC = () => {
       )}
 
       {!isLoading && nftData && (
-        <div className={styles.gridNFT}>
+        <div className="gridNFT">
           {nftData.map((nft) => (
             <Link href={`/stake/${encodeURIComponent(nft.mintAddress)}`}>
               <a>

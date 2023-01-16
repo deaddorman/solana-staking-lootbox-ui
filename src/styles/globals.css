@@ -19,11 +19,32 @@ a {
   box-sizing: border-box;
 }
 
-/* example: override wallet button style */
 .wallet-adapter-button:not([disabled]):hover {
   background-color: #707070;
 }
 
 img {
   width: 250px;
+}
+
+
+/* Main Layout */
+
+.gridNFT {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.5em;
+}
+
+
+/* Stake Page */
+
+.img-stake {
+  width: 85%;
+}
+
+.caption-stake {
+  width: 85%;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(45deg, rgba(153,69,255,1) 0%, rgba(20,241,149,1) 100%);
 }

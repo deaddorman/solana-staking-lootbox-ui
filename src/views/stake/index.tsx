@@ -12,9 +12,34 @@ export const StakeView: FC = ({ children }) => {
         Staking NFT
       </h1>
 
-      <div>
-        <img src={metadata.image}></img>
+      <div className="grid grid-cols-4">
+
+        <div>
+          {/* <img src={metadata.image} /> */}
+          <img className="img-stake" src="https://arweave.net/rbLMGswYi26B-UZeZDFTA0rxB0ic46tWNx955mPueNc?ext=jpg" alt=""/>
+          <div className="caption-stake text-center font-bold p-2">
+            STAKED
+          </div>
+        </div>
+
+        <div className="p-2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, deleniti voluptatum. Ea natus, deleniti commodi praesentium nostrum alias et neque magnam veritatis deserunt consequuntur modi, expedita laudantium delectus? Debitis, blanditiis.
+        </div>
+
+        <div className="p-2">
+          123
+        </div>
+
+        <div className="p-2">
+          asd
+        </div>
+
       </div>
+
+
+
+
+
 
     </div>
   </div>
