@@ -12,34 +12,55 @@ export const StakeView: FC = ({ children }) => {
         Staking NFT
       </h1>
 
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-4 p-2">
 
         <div>
           {/* <img src={metadata.image} /> */}
-          <img className="img-stake" src="https://arweave.net/rbLMGswYi26B-UZeZDFTA0rxB0ic46tWNx955mPueNc?ext=jpg" alt=""/>
-          <div className="caption-stake text-center font-bold p-2">
+          <img className="stake-img" src="https://arweave.net/rbLMGswYi26B-UZeZDFTA0rxB0ic46tWNx955mPueNc?ext=jpg" alt=""/>
+          <div className="stake-caption text-center font-bold p-2">
             STAKED
           </div>
         </div>
 
-        <div className="p-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, deleniti voluptatum. Ea natus, deleniti commodi praesentium nostrum alias et neque magnam veritatis deserunt consequuntur modi, expedita laudantium delectus? Debitis, blanditiis.
+        <div>
+          <div className="stake-box">
+            <span>KEVIN</span>
+            <h4>450 PINK</h4>
+            <small>earned</small>
+            <button className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500">
+              Claim
+            </button>
+          </div>
         </div>
 
-        <div className="p-2">
-          123
+        <div>
+          <div className="stake-box">
+            <span>KEVIN 2</span>
+            <h4>450 PINK</h4>
+            <small>earned asdasd</small>
+            <button className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500">
+              Claim asd
+            </button>
+          </div>
         </div>
 
-        <div className="p-2">
-          asd
+        <div>
         </div>
 
       </div>
 
+      <div className="grid grid-cols-3 p-2">
 
+        <div className="flex flex-row">
+          <div className="gear-box">
+            GEAR
+          </div>
+          <div className="gear-box">
+            GEAR
+          </div>
+        </div>
 
-
-
+      </div>
 
     </div>
   </div>

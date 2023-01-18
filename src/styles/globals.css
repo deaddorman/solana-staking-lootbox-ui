@@ -39,12 +39,56 @@ img {
 
 /* Stake Page */
 
-.img-stake {
+.stake-img {
   width: 85%;
 }
 
-.caption-stake {
+.stake-caption {
   width: 85%;
   border-radius: 0 0 10px 10px;
   background: linear-gradient(45deg, rgba(153,69,255,1) 0%, rgba(20,241,149,1) 100%);
+}
+
+.stake-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--lt-color-gray-700);
+  border-radius: 10px;
+  width: 90%;
+  padding: 10px 0;
+}
+
+.stake-box span, .stake-box small {
+  color: #FAFAFA;
+  margin-bottom: 15px;
+}
+
+.stake-box span {
+  background-color: var(--lt-color-gray-600);
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.stake-box small {
+  font-size: 14px;
+}
+
+.stake-box h4 {
+  color: #FAFAFA;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.gear-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--lt-color-gray-700);
+  border-radius: 10px;
+  padding: 30px 25px;
+  margin: 5px;
 }
