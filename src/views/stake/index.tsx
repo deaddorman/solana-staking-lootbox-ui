@@ -2,7 +2,17 @@ import { FC } from "react"
 
 export const StakeView: FC = ({ children }) => {
 
-  const metadata = children as any
+  const nftData = children[0]
+  const bldTokenAccount = children[1]
+  const stakingInfo = children[2]
+  const nftTokenAccount = children[3]
+  const metadata = children[4]
+
+  console.log('nftData', nftData)
+  console.log('bldTokenAccount', bldTokenAccount)
+  console.log('stakingInfo', stakingInfo)
+  console.log('nftTokenAccount', nftTokenAccount)
+  console.log('metadata', metadata)
 
   return (
     <div className="md:hero mx-auto p-4">
@@ -15,8 +25,10 @@ export const StakeView: FC = ({ children }) => {
       <div className="grid grid-cols-4 p-2">
 
         <div>
-          {/* <img src={metadata.image} /> */}
-          <img className="stake-img" src="https://arweave.net/rbLMGswYi26B-UZeZDFTA0rxB0ic46tWNx955mPueNc?ext=jpg" alt=""/>
+          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195] mb-2">
+            {metadata.name}
+          </h1>
+          <img src={metadata.image} className="stake-img" alt={metadata.name} />
           <div className="stake-caption text-center font-bold p-2">
             STAKED
           </div>
