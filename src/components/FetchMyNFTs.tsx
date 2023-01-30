@@ -61,12 +61,18 @@ export const FetchMyNFTs: FC = () => {
         </div>
       )}
 
+      {!isLoading && nftData.length == 0 && (
+        <div>
+          Sin NFTs
+        </div>
+      )}
+
       {!isLoading && nftData && (
         <div className="gridNFT">
           {nftData.map((nft) => (
-            <Link href={`/stake/${encodeURIComponent(nft.mintAddress)}`}>
+            <Link href={`/stake/${encodeURIComponent(nft.mintAddress)}`} key={nft.name}>
               <a>
-                <div key={nft.name}>
+                <div>
                   <ul>{nft.name}</ul>
                   <img src={nft.image} />
                 </div>
