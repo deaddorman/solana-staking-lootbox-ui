@@ -1,28 +1,40 @@
 import * as web3 from "@solana/web3.js";
 import * as token from "@solana/spl-token";
 import * as fs from "fs";
+import * as anchor from "@project-serum/anchor";
 import { DataV2, createCreateMetadataAccountV2Instruction } from "@metaplex-foundation/mpl-token-metadata";
 import { bundlrStorage, keypairIdentity, Metaplex, toMetaplexFile } from "@metaplex-foundation/js";
+import { setAuthority } from "@solana/spl-token";
 import { initializeKeypair } from "./initializeKeypair";
+import { STAKE_PROGRAM_ID } from '../../utils/constants'
 
-const TOKEN_NAME = "Pink Floyd Collection";
+const TOKEN_NAME = "Pink Floyd Token";
 const TOKEN_SYMBOL = "PINK";
-const TOKEN_DESCRIPTION = "NFT collection of Pink Floyd album covers, a English rock band formed in London in 1965. Gaining an early following as one of the first British psychedelic groups, they were distinguished by their extended compositions, sonic experimentation, philosophical lyrics and elaborate live shows. They became a leading band of the progressive rock genre, cited by some as the greatest progressive rock band of all time.";
+const TOKEN_DESCRIPTION = "Pink Floyd fungible token.";
 const TOKEN_IMAGE_NAME = "pink-floyd-cover.jpg";
-const TOKEN_IMAGE_PATH = `src/tokens/bld/assets/${TOKEN_IMAGE_NAME}`;
+const TOKEN_IMAGE_PATH = `src/tokens/pink-token/assets/${TOKEN_IMAGE_NAME}`;
 
-async function createBldToken(
+async function createPINKToken(
   connection: web3.Connection,
   payer: web3.Keypair
 ) {
+
+  // The Staking program will have the complete Authority of this token
+  const [mintAuth] = await anchor.web3.PublicKey.findProgramAddress(
+    [Buffer.from("mint")],
+    STAKE_PROGRAM_ID
+  )
+
   // This will create a token with all the necessary inputs
   const tokenMint = await token.createMint(
     connection,
     payer,
     payer.publicKey,
-    payer.publicKey,
+    null,
     2
   );
+
+  console.log('tokenMint', tokenMint);
 
   // Create a metaplex object so that we can create a metaplex metadata
   const metaplex = Metaplex.make(connection)
@@ -87,7 +99,7 @@ async function createBldToken(
   )
 
   fs.writeFileSync(
-    "src/tokens/bld/cache.json",
+    "src/tokens/pink-token/cache.json",
     JSON.stringify({
       mint: tokenMint.toBase58(),
       imageUri: imageUri,
@@ -96,13 +108,24 @@ async function createBldToken(
       metadataTransaction: transactionSignature,
     })
   );
+
+  // Later to create the token and metadata, we change the mint authority and owner
+  await setAuthority(
+    connection,
+    payer,
+    tokenMint,
+    payer.publicKey,
+    0,                          // MintTokens authority
+    mintAuth,
+  );
+  console.log('Change MintTokens authority OK');
 }
 
 async function main() {
   const connection = new web3.Connection(web3.clusterApiUrl("devnet"));
   const payer = await initializeKeypair(connection);
 
-  await createBldToken(connection, payer);
+  await createPINKToken(connection, payer);
 }
 
 main()
