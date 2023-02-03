@@ -2,9 +2,11 @@ import { FC, useMemo } from "react"
 import { useWallet, useConnection } from "@solana/wallet-adapter-react"
 import { Program, AnchorProvider } from "@project-serum/anchor"
 import { PublicKey } from "@solana/web3.js"
+import { Nft, NftWithToken, Sft, SftWithToken, JsonMetadata } from "@metaplex-foundation/js"
 import { PROGRAM_ID as METADATA_PROGRAM_ID } from "@metaplex-foundation/mpl-token-metadata";
-import { getAssociatedTokenAddress } from "@solana/spl-token";
+import { getAssociatedTokenAddress, Account } from "@solana/spl-token";
 import { IDL } from "../../utils/idl/anchor_nft_staking"
+import { StakeAccount } from "../../utils/accounts";
 import { TOKEN_REWARD } from "../../utils/constants";
 
 export const StakeView: FC = ({ children }) => {
@@ -17,17 +19,17 @@ export const StakeView: FC = ({ children }) => {
   const stakingProgramId = new PublicKey(IDL.metadata.address);
   const stakingProgram = new Program(IDL, stakingProgramId, provider)
 
-  const nftData = children[0]
-  const pinkTokenAccount = children[1]
-  const stakingInfo = children[2]
-  const nftTokenAccount = children[3]
-  const metadata = children[4]
+  const nftData: Nft | NftWithToken = children[0]    // Could be Sft | SftWithToken but cause error
+  const pinkTokenAccount: Account = children[1]
+  const stakingInfo: StakeAccount = children[2]
+  const nftTokenAccount: PublicKey = children[3]
+  const metadata: JsonMetadata = children[4]
 
-  console.log('nftData', nftData)
+  /* console.log('nftData', nftData)
   console.log('pinkTokenAccount', pinkTokenAccount)
   console.log('stakingInfo', stakingInfo)
   console.log('nftTokenAccount', nftTokenAccount)
-  console.log('metadata', metadata)
+  console.log('metadata', metadata) */
 
   const stakeNFT = async () => {
     if (

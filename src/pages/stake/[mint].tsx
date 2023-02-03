@@ -5,21 +5,21 @@ import { getAssociatedTokenAddress, getAccount, Account } from "@solana/spl-toke
 import { PublicKey } from "@solana/web3.js"
 import { StakeView } from "../../views"
 import { useWallet, useConnection } from "@solana/wallet-adapter-react"
-import { Metaplex, walletAdapterIdentity } from "@metaplex-foundation/js"
+import { Metaplex, walletAdapterIdentity, Nft, NftWithToken, Sft, SftWithToken, JsonMetadata } from "@metaplex-foundation/js"
 import { IDL } from "../../utils/idl/anchor_nft_staking"
 import { TOKEN_REWARD } from '../../utils/constants'
-import { getStakeAccount } from "../../utils/accounts"
+import { StakeAccount, getStakeAccount } from "../../utils/accounts"
 import Head from "next/head"
 
 const Stake: NextPage<StakeProps> = ({ mint }) => {
 
   const [mintAddress, setMintAddress] = useState<PublicKey>()
 
-  const [nftData, setNFTData] = useState<any>(null)
+  const [nftData, setNFTData] = useState<Nft | NftWithToken | Sft | SftWithToken>(null)
   const [pinkTokenAccount, setpinkTokenAccount] = useState<Account>()
-  const [stakingInfo, setStakingInfo] = useState<any>(null)
+  const [stakingInfo, setStakingInfo] = useState<StakeAccount>()
   const [nftTokenAccount, setNftTokenAccount] = useState<PublicKey>();
-  const [metadata, setMetadata] = useState<any>(null)
+  const [metadata, setMetadata] = useState<JsonMetadata>(null)
 
   const { connection } = useConnection()
   const wallet = useWallet()
@@ -99,8 +99,7 @@ const Stake: NextPage<StakeProps> = ({ mint }) => {
         setStakingInfo(stakingAccount)
       }
     } catch (e) {
-      setStakingInfo({})
-      console.log("Error Getting NFT Staking State:", e)
+      console.log("Error: This NFT isn't in staking")
     }
   }
 
@@ -110,7 +109,7 @@ const Stake: NextPage<StakeProps> = ({ mint }) => {
         <title>Stake</title>
       </Head>
 
-      {(metadata && nftData && pinkTokenAccount && stakingInfo && nftTokenAccount) ?
+      {(metadata && nftData && pinkTokenAccount && nftTokenAccount) ?
         <StakeView children={[
           nftData,
           pinkTokenAccount,

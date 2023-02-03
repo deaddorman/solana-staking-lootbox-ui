@@ -1,4 +1,3 @@
-import { token } from "@metaplex-foundation/js";
 import { BN } from "@project-serum/anchor";
 import { PublicKey } from "@solana/web3.js";
 
@@ -11,12 +10,12 @@ export async function getStakeAccount(
     [user.toBuffer(), tokenAccount.toBuffer()],
     program.programId
   );
-
   const account = await program.account.userStakeInfo.fetch(pda);
   return new StakeAccount(account);
 }
 
 export class StakeAccount {
+
   tokenAccount: PublicKey;
   stakeStartTime: BN;
   lastStakeRedeem: BN;
