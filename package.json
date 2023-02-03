@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "create-bld-token": "ts-node ./src/tokens/bld/index.ts"
+    "create-pink-token": "ts-node ./src/tokens/pink-token/index.ts"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",

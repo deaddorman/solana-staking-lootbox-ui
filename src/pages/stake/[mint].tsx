@@ -7,8 +7,8 @@ import { StakeView } from "../../views"
 import { useWallet, useConnection } from "@solana/wallet-adapter-react"
 import { Metaplex, walletAdapterIdentity } from "@metaplex-foundation/js"
 import { IDL } from "../../utils/idl/anchor_nft_staking"
-import { STAKE_MINT } from '../../utils/constants'
-import { getStakeAccount, StakeAccount } from "../../utils/accounts"
+import { TOKEN_REWARD } from '../../utils/constants'
+import { getStakeAccount } from "../../utils/accounts"
 import Head from "next/head"
 
 const Stake: NextPage<StakeProps> = ({ mint }) => {
@@ -16,7 +16,7 @@ const Stake: NextPage<StakeProps> = ({ mint }) => {
   const [mintAddress, setMintAddress] = useState<PublicKey>()
 
   const [nftData, setNFTData] = useState<any>(null)
-  const [bldTokenAccount, setBldTokenAccount] = useState<Account>()
+  const [pinkTokenAccount, setpinkTokenAccount] = useState<Account>()
   const [stakingInfo, setStakingInfo] = useState<any>(null)
   const [nftTokenAccount, setNftTokenAccount] = useState<PublicKey>();
   const [metadata, setMetadata] = useState<any>(null)
@@ -48,7 +48,7 @@ const Stake: NextPage<StakeProps> = ({ mint }) => {
           setNFTData(nft)
 
           // Step 2 - Get Reward Info
-          getTokenBLDInfo()
+          getTokenPINKInfo()
 
           // Step 4 - Get NFT Token Account
           getNftTokenAccount(nft)
@@ -73,13 +73,13 @@ const Stake: NextPage<StakeProps> = ({ mint }) => {
       );
   }
 
-  const getTokenBLDInfo = () => {
-    getAssociatedTokenAddress(STAKE_MINT, wallet.publicKey)
+  const getTokenPINKInfo = () => {
+    getAssociatedTokenAddress(TOKEN_REWARD, wallet.publicKey)
       .then((ata) => {
         return getAccount(connection, ata);
       })
       .then((tokenAccount) => {
-        setBldTokenAccount(tokenAccount)
+        setpinkTokenAccount(tokenAccount)
       })
       .catch((error) => {
         console.log(error);
@@ -110,10 +110,10 @@ const Stake: NextPage<StakeProps> = ({ mint }) => {
         <title>Stake</title>
       </Head>
 
-      {(metadata && nftData && bldTokenAccount && stakingInfo && nftTokenAccount) ?
+      {(metadata && nftData && pinkTokenAccount && stakingInfo && nftTokenAccount) ?
         <StakeView children={[
           nftData,
-          bldTokenAccount,
+          pinkTokenAccount,
           stakingInfo,
           nftTokenAccount,
           metadata,

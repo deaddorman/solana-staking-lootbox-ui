@@ -3,9 +3,9 @@ import { useWallet, useConnection } from "@solana/wallet-adapter-react"
 import { Program, AnchorProvider } from "@project-serum/anchor"
 import { PublicKey } from "@solana/web3.js"
 import { PROGRAM_ID as METADATA_PROGRAM_ID } from "@metaplex-foundation/mpl-token-metadata";
-import { getAssociatedTokenAddress, getAccount, Account } from "@solana/spl-token";
+import { getAssociatedTokenAddress } from "@solana/spl-token";
 import { IDL } from "../../utils/idl/anchor_nft_staking"
-import { STAKE_MINT } from "../../utils/constants";
+import { TOKEN_REWARD } from "../../utils/constants";
 
 export const StakeView: FC = ({ children }) => {
 
@@ -18,13 +18,13 @@ export const StakeView: FC = ({ children }) => {
   const stakingProgram = new Program(IDL, stakingProgramId, provider)
 
   const nftData = children[0]
-  const bldTokenAccount = children[1]
+  const pinkTokenAccount = children[1]
   const stakingInfo = children[2]
   const nftTokenAccount = children[3]
   const metadata = children[4]
 
   console.log('nftData', nftData)
-  console.log('bldTokenAccount', bldTokenAccount)
+  console.log('pinkTokenAccount', pinkTokenAccount)
   console.log('stakingInfo', stakingInfo)
   console.log('nftTokenAccount', nftTokenAccount)
   console.log('metadata', metadata)
@@ -65,7 +65,7 @@ export const StakeView: FC = ({ children }) => {
     }
 
     const userStakeATA = await getAssociatedTokenAddress(
-      STAKE_MINT,
+      TOKEN_REWARD,
       wallet.publicKey
     );
 
@@ -76,7 +76,7 @@ export const StakeView: FC = ({ children }) => {
         nftMint: nftData.mint.address,
         nftEdition: nftData.edition.address,
         metadataProgram: METADATA_PROGRAM_ID,
-        stakeMint: STAKE_MINT,
+        stakeMint: TOKEN_REWARD,
         userStakeAta: userStakeATA,
       })
       .rpc()
@@ -96,7 +96,7 @@ export const StakeView: FC = ({ children }) => {
     }
 
     const userStakeATA = await getAssociatedTokenAddress(
-      STAKE_MINT,
+      TOKEN_REWARD,
       wallet.publicKey
     );
 
@@ -104,7 +104,7 @@ export const StakeView: FC = ({ children }) => {
       .redeem()
       .accounts({
         nftTokenAccount: nftTokenAccount,
-        stakeMint: STAKE_MINT,
+        stakeMint: TOKEN_REWARD,
         userStakeAta: userStakeATA,
       })
       .rpc()
@@ -126,10 +126,7 @@ export const StakeView: FC = ({ children }) => {
 
         <div className="grid grid-cols-4 p-2">
 
-          <div>
-            <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195] mb-2">
-              {metadata.name}
-            </h1>
+          <div className="m-2">
             <img src={metadata.image} className="stake-img" alt={metadata.name} />
             <div className="stake-caption text-center font-bold p-2">
               {stakingInfo?.stakeState?.staked
@@ -139,9 +136,12 @@ export const StakeView: FC = ({ children }) => {
                 : `READY TO STAKE`
               }
             </div>
+            <h1 className="text-3xl font-bold text-transparent text-center bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195] mt-2">
+              {metadata.name}
+            </h1>
           </div>
 
-          <div>
+          <div className="m-2">
             <div className="stake-box">
               <div className="text-center">
                 {stakingInfo?.stakeState?.staked
@@ -152,29 +152,33 @@ export const StakeView: FC = ({ children }) => {
                   : "READY TO STAKE"}
               </div>
               <p className="text-4xl font-bold p-2">
-                {`${Number(bldTokenAccount?.amount ?? 0) / Math.pow(10, 2)} $BLD`}
+                {`${Number(pinkTokenAccount?.amount ?? 0) / Math.pow(10, 2)} $PINK`}
               </p>
               <p>
                 {stakingInfo?.stakeState?.staked
-                  ? `${stakingInfo?.claimable().toPrecision(2)} $BLD earned`
-                  : "earn $BLD by staking"
+                  ? `${stakingInfo?.claimable().toFixed(2)} $PINK earned`
+                  : "earn $PINK by staking"
                 }
               </p>
             </div>
           </div>
 
-          <div>
+          <div className="m-2">
             <div className="stake-box">
-              <button onClick={
-                stakingInfo?.stakeState?.staked ? claimReward : stakeNFT
-              } className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500">
+              <button
+                onClick={ stakingInfo?.stakeState?.staked ? claimReward : stakeNFT }
+                className="px-8 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 btn-90"
+              >
                 {stakingInfo?.stakeState?.staked
-                  ? "Claim $BLD"
+                  ? "Claim $PINK"
                   : "Stake NFT"
                 }
               </button>
               {stakingInfo?.stakeState?.staked ? (
-                <button onClick={unstakeNFT} className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500">
+                <button
+                  onClick={unstakeNFT}
+                  className="px-8 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 btn-90"
+                >
                   Unstake
                 </button>
               ) : null}

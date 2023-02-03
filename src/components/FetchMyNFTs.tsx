@@ -2,7 +2,7 @@ import { useConnection, useWallet } from "@solana/wallet-adapter-react"
 import { Metaplex, walletAdapterIdentity } from "@metaplex-foundation/js"
 import { FC, useEffect, useState } from "react"
 import { PublicKey } from "@solana/web3.js"
-import { CANDY_MACHINE_ADDRESS, STAKE_MINT } from '../utils/constants';
+import { CANDY_MACHINE_ADDRESS, NFT_COLLECTION } from '../utils/constants';
 import Link from "next/link"
 
 export const FetchMyNFTs: FC = () => {
@@ -31,7 +31,7 @@ export const FetchMyNFTs: FC = () => {
 
     const nftsByCollectionId = []
     allOwnerNFTs.forEach((nft: any) => {
-      if (nft.collection?.address.toString() == STAKE_MINT.toString())
+      if (nft.collection?.address.toString() == NFT_COLLECTION.toString())
         nftsByCollectionId.push(nft)
     })
 
