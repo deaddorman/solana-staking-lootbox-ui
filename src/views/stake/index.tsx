@@ -24,6 +24,7 @@ export const StakeView: FC = ({ children }) => {
   const stakingInfo: StakeAccount = children[2]
   const nftTokenAccount: PublicKey = children[3]
   const metadata: JsonMetadata = children[4]
+  const updateViewInformation = children[5]
 
   /* console.log('nftData', nftData)
   console.log('pinkTokenAccount', pinkTokenAccount)
@@ -52,7 +53,7 @@ export const StakeView: FC = ({ children }) => {
       })
       .rpc()
 
-    // REFLESH PAGE !!!
+    updateViewInformation()
   }
 
   const unstakeNFT = async () => {
@@ -83,7 +84,7 @@ export const StakeView: FC = ({ children }) => {
       })
       .rpc()
 
-    // REFLESH PAGE !!!
+    updateViewInformation()
   }
 
   const claimReward = async () => {
@@ -111,7 +112,7 @@ export const StakeView: FC = ({ children }) => {
       })
       .rpc()
 
-    // REFLESH PAGE !!!
+    updateViewInformation()
   }
 
   const daysStaked = useMemo(() => {

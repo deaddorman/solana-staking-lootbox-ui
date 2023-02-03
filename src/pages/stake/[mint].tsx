@@ -38,33 +38,36 @@ const Stake: NextPage<StakeProps> = ({ mint }) => {
   }, [])
 
   useEffect(() => {
-    if (mintAddress && wallet) {
-      // Step 1 - Get NFT Info
-      metaplex
-        .nfts()
-        .findByMint({ mintAddress: mintAddress })
-        .then((nft) => {
-
-          setNFTData(nft)
-
-          // Step 2 - Get Reward Info
-          getTokenPINKInfo()
-
-          // Step 4 - Get NFT Token Account
-          getNftTokenAccount(nft)
-
-          // Step 5 - Get NFT Staking Info
-          getStakingState()
-
-          // Step 6 - Get NFT Metadata
-          fetch(nft.uri)
-            .then((res) => res.json())
-            .then((m) => {
-              setMetadata(m)
-            })
-        })
-    }
+    if (mintAddress && wallet)
+      getViewInformation()
   }, [mintAddress, wallet])
+
+  const getViewInformation = () => {
+    // Step 1 - Get NFT Info
+    metaplex
+      .nfts()
+      .findByMint({ mintAddress: mintAddress })
+      .then((nft) => {
+
+        setNFTData(nft)
+
+        // Step 2 - Get Reward Info
+        getTokenPINKInfo()
+
+        // Step 4 - Get NFT Token Account
+        getNftTokenAccount(nft)
+
+        // Step 5 - Get NFT Staking Info
+        getStakingState()
+
+        // Step 6 - Get NFT Metadata
+        fetch(nft.uri)
+          .then((res) => res.json())
+          .then((m) => {
+            setMetadata(m)
+          })
+      })
+  }
 
   const getNftTokenAccount = (nft) => {
     connection.getTokenLargestAccounts(nft.mint.address)
@@ -116,6 +119,7 @@ const Stake: NextPage<StakeProps> = ({ mint }) => {
           stakingInfo,
           nftTokenAccount,
           metadata,
+          getViewInformation
         ]} /> : <p className="text-center m-4">Loading...</p>}
 
     </div>
