@@ -7,8 +7,6 @@ import Link from "next/link"
 
 export const FetchMyNFTs: FC = () => {
 
-  const [candyMachineAddress, setCandyMachineAddress] = useState(new PublicKey(CANDY_MACHINE_ADDRESS))
-
   const [nftData, setNftData] = useState(null)
 
   const { connection } = useConnection()
@@ -73,8 +71,10 @@ export const FetchMyNFTs: FC = () => {
             <Link href={`/stake/${encodeURIComponent(nft.mintAddress)}`} key={nft.name}>
               <a>
                 <div>
-                  <ul>{nft.name}</ul>
-                  <img src={nft.image} />
+                  <p className="font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
+                    {nft.name}
+                  </p>
+                  <img className="img-animated mb-2" src={nft.image} />
                 </div>
               </a>
             </Link>

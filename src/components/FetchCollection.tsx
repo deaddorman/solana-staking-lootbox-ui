@@ -76,7 +76,7 @@ export const FetchCollection: FC = () => {
     if (!candyMachineData) {
       return
     }
-    getPage(page, 9)
+    getPage(page, 8)
   }, [candyMachineData, page])
 
   // Mint NFTS
@@ -89,9 +89,17 @@ export const FetchCollection: FC = () => {
   return (
     <div>
 
+      {candyMachineData && (
+        <div className="flex flex-col items-center justify-center p-3">
+          <p className="text-1xl text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
+            Candy Machine Address: {candyMachineData.address.toString()}
+          </p>
+        </div>
+      )}
+
       {!isLoading && !isMinting && (
         <button
-          className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
+          className="px-8 m-3 mb-5 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500"
           onClick={mintNewNFT}
         >
           Mint NFT <small>(0.3 SOL)</small>
@@ -100,16 +108,10 @@ export const FetchCollection: FC = () => {
 
       {isMinting && (
         <button
-          className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
+          className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500"
         >
           Minting NFT...
         </button>
-      )}
-
-      {candyMachineData && (
-        <div className="flex flex-col items-center justify-center p-5">
-          <ul>Candy Machine Address: {candyMachineData.address.toString()}</ul>
-        </div>
       )}
 
       {isLoading && (
@@ -123,19 +125,21 @@ export const FetchCollection: FC = () => {
           <div className="gridNFT">
             {pageItems.map((nft) => (
               <div key={nft.name}>
-                <ul>{nft.name}</ul>
-                <img src={nft.image} />
+                <p className="font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
+                  {nft.name}
+                </p>
+                <img className="mb-2" src={nft.image} />
               </div>
             ))}
           </div>
           <button
-            className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
+            className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500"
             onClick={prev}
           >
             Prev
           </button>
           <button
-            className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
+            className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500"
             onClick={next}
           >
             Next

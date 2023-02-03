@@ -121,12 +121,15 @@ export const StakeView: FC = ({ children }) => {
       <div className="md:hero-content flex flex-col">
 
         <h1 className="text-center text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
-          Staking NFT
+          Stake your NFT and win $PINK
         </h1>
 
-        <div className="grid grid-cols-4 p-2">
+        <div className="grid lg:grid-cols-3 xs:grid-cols-1 p-2">
 
           <div className="m-2">
+            <h1 className="text-3xl font-bold text-transparent text-center bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195] mb-2">
+              {metadata.name}
+            </h1>
             <img src={metadata.image} className="stake-img" alt={metadata.name} />
             <div className="stake-caption text-center font-bold p-2">
               {stakingInfo?.stakeState?.staked
@@ -136,9 +139,6 @@ export const StakeView: FC = ({ children }) => {
                 : `READY TO STAKE`
               }
             </div>
-            <h1 className="text-3xl font-bold text-transparent text-center bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195] mt-2">
-              {metadata.name}
-            </h1>
           </div>
 
           <div className="m-2">
