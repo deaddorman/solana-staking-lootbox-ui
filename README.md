@@ -4,6 +4,9 @@ Solana, Metaplex, and Candy Machine Token Collection
 <br>
 Mint NFT, stake it and win a $PINK as reward
 
+![Stake NFT Demo](https://github.com/KevinFiorentino/pink-floyd-nft-collection/blob/master/public/stake-demo.png?raw=true)
+
+
 [Staking program](https://github.com/KevinFiorentino/solana-nft-staking)
 
 ### Create reward token
