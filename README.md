@@ -1,18 +1,24 @@
 # Pink Floyd NFT Collection
 
-Solana, Metaplex, and CandyMachine Token Collection
+Solana, Metaplex, and Candy Machine Token Collection
+<br>
+Mint NFT, stake it and win a $PINK as reward
 
-### Usage
+[Staking program](https://github.com/KevinFiorentino/solana-nft-staking)
+
+### Create reward token
+
+- `npm run create-pink-token`
+- Set `TOKEN_REWARD` in `src/utils/constants.ts`
+
+### Create Candy Machine
+
+- `cd src/tokens/candy-machine`
+- `sugar launch`
+- Set `CANDY_MACHINE_ADDRESS` and `NFT_COLLECTION` in `src/utils/constants.ts`
+
+### Run dapp
 
 - `nvm use 16`
 - `npm install`
 - `npm run dev`
-
-[See collection](https://www.solaneyes.com/address/EffvnFd2wSJEGYphmV7a6Nta4W8rNntkF94WxLeTwoPF)
-
-
-### Run the app
-
-- Create PINK token using: `npm run create-pink-token`
-- Create candy machine by placing the NFTs in assets folders and run: `sugar launch`
-- Create the minting UI by running: `npm run dev`
