@@ -1,17 +1,17 @@
-import * as web3 from "@solana/web3.js";
-import * as token from "@solana/spl-token";
-import * as fs from "fs";
-import * as anchor from "@project-serum/anchor";
-import { DataV2, createCreateMetadataAccountV2Instruction } from "@metaplex-foundation/mpl-token-metadata";
-import { bundlrStorage, keypairIdentity, Metaplex, toMetaplexFile } from "@metaplex-foundation/js";
-import { setAuthority } from "@solana/spl-token";
-import { initializeKeypair } from "./initializeKeypair";
+import * as web3 from '@solana/web3.js';
+import * as token from '@solana/spl-token';
+import * as fs from 'fs';
+import * as anchor from '@project-serum/anchor';
+import { DataV2, createCreateMetadataAccountV2Instruction } from '@metaplex-foundation/mpl-token-metadata';
+import { bundlrStorage, keypairIdentity, Metaplex, toMetaplexFile } from '@metaplex-foundation/js';
+import { setAuthority } from '@solana/spl-token';
+import { initializeKeypair } from './initializeKeypair';
 import { STAKE_PROGRAM_ID } from '../../utils/constants'
 
-const TOKEN_NAME = "Pink Floyd Token";
-const TOKEN_SYMBOL = "PINK";
-const TOKEN_DESCRIPTION = "Pink Floyd fungible token.";
-const TOKEN_IMAGE_NAME = "pink-floyd-cover.jpg";
+const TOKEN_NAME = 'Pink Floyd Token';
+const TOKEN_SYMBOL = 'PINK';
+const TOKEN_DESCRIPTION = 'Pink Floyd fungible token.';
+const TOKEN_IMAGE_NAME = 'pink-floyd-cover.jpg';
 const TOKEN_IMAGE_PATH = `src/tokens/pink-token/assets/${TOKEN_IMAGE_NAME}`;
 
 async function createPINKToken(
@@ -21,7 +21,7 @@ async function createPINKToken(
 
   // The Staking program will have the complete Authority of this token
   const [mintAuth] = await anchor.web3.PublicKey.findProgramAddress(
-    [Buffer.from("mint")],
+    [Buffer.from('mint')],
     STAKE_PROGRAM_ID
   )
 
@@ -41,8 +41,8 @@ async function createPINKToken(
     .use(keypairIdentity(payer))
     .use(
       bundlrStorage({
-        address: "https://devnet.bundlr.network",
-        providerUrl: "https://api.devnet.solana.com",
+        address: 'https://devnet.bundlr.network',
+        providerUrl: 'https://api.devnet.solana.com',
         timeout: 60000,
       })
     );
@@ -99,7 +99,7 @@ async function createPINKToken(
   )
 
   fs.writeFileSync(
-    "src/tokens/pink-token/cache.json",
+    'src/tokens/pink-token/cache.json',
     JSON.stringify({
       mint: tokenMint.toBase58(),
       imageUri: imageUri,
@@ -122,7 +122,7 @@ async function createPINKToken(
 }
 
 async function main() {
-  const connection = new web3.Connection(web3.clusterApiUrl("devnet"));
+  const connection = new web3.Connection(web3.clusterApiUrl('devnet'));
   const payer = await initializeKeypair(connection);
 
   await createPINKToken(connection, payer);
@@ -130,7 +130,7 @@ async function main() {
 
 main()
   .then(() => {
-    console.log("Finished successfully");
+    console.log('Finished successfully');
     process.exit(0);
   })
   .catch((error) => {

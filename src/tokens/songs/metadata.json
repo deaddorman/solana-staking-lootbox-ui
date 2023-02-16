@@ -1,0 +1,72 @@
+[
+    {
+        "song": "Comfortably Numb",
+        "img": "comfortably-numb",
+        "album": "The Wall",
+        "year": "1979",
+        "lyrics": "https://www.pink-floyd-lyrics.com/html/comfortably-numb-wall-lyrics.html"
+    },
+    {
+        "song": "Hey You",
+        "img": "hey-you",
+        "album": "The Wall",
+        "year": "1979",
+        "lyrics": "https://www.pink-floyd-lyrics.com/html/hey-you-wall-lyrics.html"
+    },
+    {
+        "song": "Time",
+        "img": "time",
+        "album": "The Dark Side Of The Moon",
+        "year": "1973",
+        "lyrics": "https://www.pink-floyd-lyrics.com/html/time-dark-lyrics.html"
+    },
+    {
+        "song": "Us and Them",
+        "img": "us-and-them",
+        "album": "The Dark Side Of The Moon",
+        "year": "1973",
+        "lyrics": "https://www.pink-floyd-lyrics.com/html/us-and-them-dark-lyrics.html"
+    },
+    {
+        "song": "Wish You Were Here",
+        "img": "wish-you-were-here",
+        "album": "Wish You Were Here",
+        "year": "1975",
+        "lyrics": "https://www.pink-floyd-lyrics.com/html/wish-you-were-here-wish-lyrics.html"
+    },
+    {
+        "song": "Shine On You Crazy Diamond",
+        "img": "shine-on-you-crazy-diamond",
+        "album": "Wish You Were Here",
+        "year": "1975",
+        "lyrics": "https://www.pink-floyd-lyrics.com/html/shine-crazy-diamond-1-wish.html"
+    },
+    {
+        "song": "Welcome To The Machine",
+        "img": "welcome-to-the-machine",
+        "album": "Wish You Were Here",
+        "year": "1975",
+        "lyrics": "https://www.pink-floyd-lyrics.com/html/welcome-machine-wish-lyrics.html"
+    },
+    {
+        "song": "Sorrow",
+        "img": "sorrow",
+        "album": "A Momentary Lapse Of Reason",
+        "year": "1987",
+        "lyrics": "https://www.pink-floyd-lyrics.com/html/sorrow-lyrics-lapse.html"
+    },
+    {
+        "song": "Coming Back To Life",
+        "img": "coming-back-to-life",
+        "album": "The Division Bell",
+        "year": "1994",
+        "lyrics": "https://www.pink-floyd-lyrics.com/html/coming-back-to-life-lyrics-division-bell.html"
+    },
+    {
+        "song": "High Hopes",
+        "img": "high-hopes",
+        "album": "The Division Bell",
+        "year": "1994",
+        "lyrics": "https://www.pink-floyd-lyrics.com/html/high-hopes-lyrics-division-bell.html"
+    }
+]
