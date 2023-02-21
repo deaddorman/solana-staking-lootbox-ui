@@ -1,12 +1,12 @@
-# Pink Floyd NFT Collection
+# Solana DApp - NFTs, Staking and Lootbox
 
-Solana, Metaplex, and Candy Machine Token Collection
+Mint NFT, Stake it and win $PINK as Reward. Change reward token for a random Lootbox.
 <br>
-Mint NFT, stake it and win a $PINK as reward
+A Pink Floyd NFT collection. Win $PINK and change it for Pink Floyd's SONGs collection.
 
-- ![Stake NFT Demo](https://github.com/KevinFiorentino/pink-floyd-nft-collection/blob/master/public/stake-demo.png?raw=true)
+- ![Stake NFT Demo](https://github.com/KevinFiorentino/solana-staking-lootbox-ui/blob/master/public/stake-demo.png?raw=true)
 
-- [Staking & Lootbox Program](https://github.com/KevinFiorentino/solana-nft-staking)
+- [Staking & Lootbox Program](https://github.com/KevinFiorentino/solana-staking-lootbox)
 
 > Use at least NodeJS v16
 
@@ -18,13 +18,13 @@ Mint NFT, stake it and win a $PINK as reward
 
 ### Create Reward Token
 
-- Set `nft-staking` programId in `src/utils/constants.ts` from [programs repo](https://github.com/KevinFiorentino/solana-nft-staking)
+- Set `nft-staking` programId in `src/utils/constants.ts` from [programs repo](https://github.com/KevinFiorentino/solana-staking-lootbox)
 - `npm run create-pink-token`
 - Set `TOKEN_REWARD` in `src/utils/constants.ts`
 
 ### Create SONGs Token
 
-- Set `lootbox` programId in `src/utils/constants.ts` from [programs repo](https://github.com/KevinFiorentino/solana-nft-staking)
+- Set `lootbox` programId in `src/utils/constants.ts` from [programs repo](https://github.com/KevinFiorentino/solana-staking-lootbox)
 - `npm run create-pink-songs`
 - Set these program IDs generated in `lootbox-program`
 
