@@ -4,24 +4,31 @@ Solana, Metaplex, and Candy Machine Token Collection
 <br>
 Mint NFT, stake it and win a $PINK as reward
 
-![Stake NFT Demo](https://github.com/KevinFiorentino/pink-floyd-nft-collection/blob/master/public/stake-demo.png?raw=true)
+- ![Stake NFT Demo](https://github.com/KevinFiorentino/pink-floyd-nft-collection/blob/master/public/stake-demo.png?raw=true)
 
+- [Staking & Lootbox Program](https://github.com/KevinFiorentino/solana-nft-staking)
 
-[Staking program](https://github.com/KevinFiorentino/solana-nft-staking)
+> Use at least NodeJS v16
 
-### Create reward token
-
-- `npm run create-pink-token`
-- Set `TOKEN_REWARD` in `src/utils/constants.ts`
-
-### Create Candy Machine
+### Create NFT Collection With Candy Machine
 
 - `cd src/tokens/candy-machine`
 - `sugar launch`
 - Set `CANDY_MACHINE_ADDRESS` and `NFT_COLLECTION` in `src/utils/constants.ts`
 
+### Create Reward Token
+
+- Set `nft-staking` programId in `src/utils/constants.ts` from [programs repo](https://github.com/KevinFiorentino/solana-nft-staking)
+- `npm run create-pink-token`
+- Set `TOKEN_REWARD` in `src/utils/constants.ts`
+
+### Create SONGs Token
+
+- Set `lootbox` programId in `src/utils/constants.ts` from [programs repo](https://github.com/KevinFiorentino/solana-nft-staking)
+- `npm run create-pink-songs`
+- Set these program IDs generated in `lootbox-program`
+
 ### Run dapp
 
-- `nvm use 16`
 - `npm install`
 - `npm run dev`

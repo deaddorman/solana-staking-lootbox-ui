@@ -25,7 +25,6 @@ async function createPINKToken(
     STAKE_PROGRAM_ID
   )
 
-  // This will create a token with all the necessary inputs
   const tokenMint = await token.createMint(
     connection,
     payer,
@@ -34,9 +33,6 @@ async function createPINKToken(
     2
   );
 
-  console.log('tokenMint', tokenMint);
-
-  // Create a metaplex object so that we can create a metaplex metadata
   const metaplex = Metaplex.make(connection)
     .use(keypairIdentity(payer))
     .use(
@@ -47,12 +43,10 @@ async function createPINKToken(
       })
     );
 
-  // Read image file
   const imageBuffer = fs.readFileSync(TOKEN_IMAGE_PATH);
   const file = toMetaplexFile(imageBuffer, TOKEN_IMAGE_NAME);
   const imageUri = await metaplex.storage().upload(file);
 
-  // Upload the rest of offchain metadata
   const { uri } = await metaplex
     .nfts()
     .uploadMetadata({
@@ -61,7 +55,6 @@ async function createPINKToken(
       image: imageUri,
     });
 
-  // Finding out the address where the metadata is stored
   const metadataPda = metaplex.nfts().pdas().metadata({ mint: tokenMint });
   const tokenMetadata = {
     name: TOKEN_NAME,
@@ -118,6 +111,7 @@ async function createPINKToken(
     0,                          // MintTokens authority
     mintAuth,
   );
+
   console.log('Change MintTokens authority OK');
 }
 
