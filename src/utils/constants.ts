@@ -5,8 +5,8 @@ export const CANDY_MACHINE_ADDRESS = new PublicKey('EffvnFd2wSJEGYphmV7a6Nta4W8r
 
 export const NFT_COLLECTION = new PublicKey('4dTs2oJvaP7XgBeVDnvHCKqRFvuxAhcMHYzzLjXe5txt')
 
-export const STAKE_PROGRAM_ID = new PublicKey('6nVX2aZbjeXKiu5zResyB2G8ZyfgoZM411B5jSBF7Azj')
+export const STAKE_PROGRAM_ID = new PublicKey('8WUdyHRWLnfWCYuukaPJ5Hd1PmyCoN4yEY4zBcBTiQz6')
 
-export const LOOKBOX_PROGRAM_ID = new PublicKey('B8t7TWYR8y8vXheSXw1LQaynip1JiXBxwRoSJrTzvX7c')
+export const LOOKBOX_PROGRAM_ID = new PublicKey('4JsjY8YN4d1g3s823x1MUfgYWxFsK9CCu4sHms7SELDp')
 
-export const TOKEN_REWARD = new PublicKey('5cKPz4cr14o6WpCEe55mBDVMbk8gvGNLiuQa64dcxERU')
+export const TOKEN_REWARD = new PublicKey('F7vZpmyriKzG7uAxvy6Gjbt73Ln3Lec1JkUR1cZVT9vq')

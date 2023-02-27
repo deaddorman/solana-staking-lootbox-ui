@@ -4,7 +4,7 @@ Mint NFT, Stake it and win $PINK as Reward. Change reward token for a random Loo
 <br>
 A Pink Floyd NFT collection. Win $PINK and change it for Pink Floyd's SONGs collection.
 
-- ![Stake NFT Demo](https://github.com/KevinFiorentino/solana-staking-lootbox-ui/blob/master/public/stake-demo.png?raw=true)
+![Stake NFT Demo](https://github.com/KevinFiorentino/solana-staking-lootbox-ui/blob/master/public/stake-demo.png?raw=true)
 
 - [Staking & Lootbox Program](https://github.com/KevinFiorentino/solana-staking-lootbox)
 
