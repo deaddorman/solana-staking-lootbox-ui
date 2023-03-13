@@ -1,14 +1,15 @@
 import type { NextPage } from "next"
 import { useEffect, useState, useMemo } from "react"
 import { Program, AnchorProvider } from "@project-serum/anchor"
-import { getAssociatedTokenAddress, getAccount, Account } from "@solana/spl-token";
-import { PublicKey } from "@solana/web3.js"
+import { getAssociatedTokenAddress, getOrCreateAssociatedTokenAccount, createAssociatedTokenAccountInstruction, getAccount, Account } from "@solana/spl-token";
+import { PublicKey, Signer } from "@solana/web3.js"
 import { StakeView } from "../../views"
 import { useWallet, useConnection } from "@solana/wallet-adapter-react"
 import { Metaplex, walletAdapterIdentity, Nft, NftWithToken, Sft, SftWithToken, JsonMetadata } from "@metaplex-foundation/js"
-import { IDL } from "../../utils/idl/anchor_nft_staking"
-import { TOKEN_REWARD } from '../../utils/constants'
+import { IDL } from "../../utils/idl/solana_nft_staking"
+import { TOKEN_REWARD, STAKE_PROGRAM_ID } from '../../utils/constants'
 import { StakeAccount, getStakeAccount } from "../../utils/accounts"
+import { getOrCreateATA } from "../../utils/accounts";
 import Head from "next/head"
 
 const Stake: NextPage<StakeProps> = ({ mint }) => {
@@ -26,7 +27,7 @@ const Stake: NextPage<StakeProps> = ({ mint }) => {
 
   const provider = new AnchorProvider(connection, wallet, {})
 
-  const stakingProgramId = new PublicKey(IDL.metadata.address);
+  const stakingProgramId = STAKE_PROGRAM_ID;
   const stakingProgram = new Program(IDL, stakingProgramId, provider)
 
   const metaplex = useMemo(() => {
@@ -76,16 +77,16 @@ const Stake: NextPage<StakeProps> = ({ mint }) => {
       );
   }
 
-  const getTokenPINKInfo = () => {
-    getAssociatedTokenAddress(TOKEN_REWARD, wallet.publicKey)
+  const getTokenPINKInfo = async () => {
+    getOrCreateATA(wallet, connection, wallet.publicKey, TOKEN_REWARD, wallet.publicKey)
       .then((ata) => {
-        return getAccount(connection, ata);
+        return getAccount(connection, ata.address);
       })
       .then((tokenAccount) => {
         setpinkTokenAccount(tokenAccount)
       })
       .catch((error) => {
-        console.log(error);
+        console.log('Error getting ATA', error);
       });
   }
 

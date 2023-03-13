@@ -1,6 +1,6 @@
-export type AnchorNftStaking = {
+export type SolanaNftStaking = {
   "version": "0.1.0",
-  "name": "anchor_nft_staking",
+  "name": "solana_nft_staking",
   "instructions": [
     {
       "name": "stake",
@@ -286,6 +286,10 @@ export type AnchorNftStaking = {
             "type": "i64"
           },
           {
+            "name": "totalEarned",
+            "type": "u64"
+          },
+          {
             "name": "userPubkey",
             "type": "publicKey"
           },
@@ -337,13 +341,13 @@ export type AnchorNftStaking = {
     }
   ],
   "metadata": {
-    "address": "AZmjfaCUAj9bh1GQvoAUnp37RmRumRjSopP6QW7pGQuR"
+    "address": "8WUdyHRWLnfWCYuukaPJ5Hd1PmyCoN4yEY4zBcBTiQz6"
   }
 };
 
-export const IDL: AnchorNftStaking = {
+export const IDL: SolanaNftStaking = {
   "version": "0.1.0",
-  "name": "anchor_nft_staking",
+  "name": "solana_nft_staking",
   "instructions": [
     {
       "name": "stake",
@@ -629,6 +633,10 @@ export const IDL: AnchorNftStaking = {
             "type": "i64"
           },
           {
+            "name": "totalEarned",
+            "type": "u64"
+          },
+          {
             "name": "userPubkey",
             "type": "publicKey"
           },
@@ -680,6 +688,6 @@ export const IDL: AnchorNftStaking = {
     }
   ],
   "metadata": {
-    "address": "AZmjfaCUAj9bh1GQvoAUnp37RmRumRjSopP6QW7pGQuR"
+    "address": "8WUdyHRWLnfWCYuukaPJ5Hd1PmyCoN4yEY4zBcBTiQz6"
   }
 };

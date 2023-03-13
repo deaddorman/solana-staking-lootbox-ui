@@ -1,5 +1,11 @@
 import { BN } from "@project-serum/anchor";
-import { PublicKey } from "@solana/web3.js";
+import { Connection, PublicKey, Transaction } from '@solana/web3.js';
+import {
+  getMint, getAccount, createInitializeMintInstruction, createMintToInstruction, createTransferInstruction, createBurnInstruction,
+  getAssociatedTokenAddress, createAssociatedTokenAccountInstruction, TOKEN_PROGRAM_ID, ASSOCIATED_TOKEN_PROGRAM_ID, MINT_SIZE, MintLayout,
+  TokenAccountNotFoundError, TokenInvalidAccountOwnerError
+} from '@solana/spl-token';
+import { WalletContextState } from "@solana/wallet-adapter-react";
 
 export async function getStakeAccount(
   program: any,
@@ -51,4 +57,58 @@ export class StakeAccount {
 
     return 10 * (seconds / (24 * 60 * 60));
   }
+}
+
+export async function getOrCreateATA(
+  wallet: WalletContextState,
+  connection: Connection,
+  payerPublicKey: PublicKey,
+  mint: PublicKey,
+  owner: PublicKey
+) {
+
+  // ATA = Associated Token Address
+  const ATA = await getAssociatedTokenAddress(mint, owner, true, TOKEN_PROGRAM_ID, ASSOCIATED_TOKEN_PROGRAM_ID);
+
+  let account;
+
+  try {
+    account = await getAccount(connection, ATA, 'confirmed', TOKEN_PROGRAM_ID);
+  }
+  catch (error) {
+    if (error instanceof TokenAccountNotFoundError || error instanceof TokenInvalidAccountOwnerError) {
+      try {
+        const transaction = new Transaction().add(
+          createAssociatedTokenAccountInstruction(
+            payerPublicKey,
+            ATA,
+            owner,
+            mint,
+            TOKEN_PROGRAM_ID,
+            ASSOCIATED_TOKEN_PROGRAM_ID,
+          )
+        );
+
+        const latestBlockHash = await connection.getLatestBlockhash();
+        transaction.recentBlockhash = latestBlockHash.blockhash;
+        transaction.lastValidBlockHeight = latestBlockHash.lastValidBlockHeight;
+
+        transaction.feePayer = payerPublicKey;
+
+        const transactionSigned = await wallet.signTransaction(transaction);
+        await connection.sendRawTransaction(transactionSigned.serialize());
+
+        // Recargo página por que la app no espera a que el ATA exista y fallan otras request a Solana
+        window.location.reload()
+      }
+      catch (error) {}
+      account = await getAccount(connection, ATA, 'confirmed', TOKEN_PROGRAM_ID);
+    }
+    else {
+      throw error;
+    }
+  }
+
+
+  return account;
 }

@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "name": "anchor_nft_staking",
+  "name": "solana_nft_staking",
   "instructions": [
     {
       "name": "stake",
@@ -286,6 +286,10 @@
             "type": "i64"
           },
           {
+            "name": "totalEarned",
+            "type": "u64"
+          },
+          {
             "name": "userPubkey",
             "type": "publicKey"
           },
@@ -337,6 +341,6 @@
     }
   ],
   "metadata": {
-    "address": "AZmjfaCUAj9bh1GQvoAUnp37RmRumRjSopP6QW7pGQuR"
+    "address": "8WUdyHRWLnfWCYuukaPJ5Hd1PmyCoN4yEY4zBcBTiQz6"
   }
 }
