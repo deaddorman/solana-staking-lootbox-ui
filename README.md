@@ -6,7 +6,7 @@ A Pink Floyd NFT collection. Win $PINK and change it for Pink Floyd's SONGs coll
 
 ![Stake NFT Demo](https://github.com/KevinFiorentino/solana-staking-lootbox-ui/blob/master/public/stake-demo.png?raw=true)
 
-- [Staking & Lootbox Program](https://github.com/KevinFiorentino/solana-staking-lootbox)
+- See [Staking & Lootbox Program](https://github.com/KevinFiorentino/solana-staking-lootbox)
 
 > Use at least NodeJS v16
 

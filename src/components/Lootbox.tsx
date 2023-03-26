@@ -313,10 +313,10 @@ export const Lootbox = ({
           className="px-8 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 btn-90"
         >
           {mint
-            ? "Redeem"
+            ? "Redeem Lootbox"
             : userAccountExists
             ? `${availableLootbox} $BLD`
-            : "Enable"}
+            : "Enable Lootbox"}
         </button>
       ) : (
         <p className="text-2xl p-2">Keep Staking</p>

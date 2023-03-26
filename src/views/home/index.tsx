@@ -33,6 +33,10 @@ export const HomeView: FC = ({}) => {
           <RequestAirdrop />
           {wallet && <p>Your SOL Balance: {(balance || 0).toLocaleString()}</p>}
         </div>
+        <hr className="divider"></hr>
+        <div>
+          <a href="https://github.com/KevinFiorentino/solana-staking-lootbox-ui" target="_blank">See on GitHub</a>
+        </div>
       </div>
     </div>
   )
