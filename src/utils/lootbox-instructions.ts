@@ -226,10 +226,10 @@ async function initSwitchboardLootboxUser(
         vrfPermissionBump: accountsAndData.permissionBump,
       })
       .accounts({
-        // state: userStatePDA,
+        state: accountsAndData.userStatePda,
         vrf: vrfKeypair.publicKey,
-        // payer: publicKey,
-        // systemProgram: anchor.web3.SystemProgram.programId,
+        payer: accountsAndData.userPubkey,
+        systemProgram: SystemProgram.programId,
       })
       .instruction(),
   ]

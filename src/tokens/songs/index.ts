@@ -4,7 +4,7 @@ import * as fs from 'fs'
 import { initializeKeypair } from './initializeKeypair'
 import { bundlrStorage, findMetadataPda, keypairIdentity, Metaplex, toMetaplexFile} from '@metaplex-foundation/js'
 import { DataV2, createCreateMetadataAccountV2Instruction } from '@metaplex-foundation/mpl-token-metadata'
-import { LOOKBOX_PROGRAM_ID } from '../../utils/constants'
+import { LOOTBOX_PROGRAM_ID } from '../../utils/constants'
 import songs_metadata from './metadata.json'
 
 interface Song {
@@ -42,7 +42,7 @@ async function createSongs(
     // The Lootbox program will have the complete Authority of these tokens
     const [mintAuth] = await web3.PublicKey.findProgramAddress(
       [Buffer.from('mint')],
-      LOOKBOX_PROGRAM_ID
+      LOOTBOX_PROGRAM_ID
     )
 
     const tokenMint = await token.createMint(

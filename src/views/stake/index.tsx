@@ -8,6 +8,8 @@ import { getAssociatedTokenAddress, Account } from "@solana/spl-token";
 import { IDL } from "../../utils/idl/solana_nft_staking"
 import { StakeAccount } from "../../utils/accounts";
 import { TOKEN_REWARD, STAKE_PROGRAM_ID } from "../../utils/constants";
+import { SongItem } from "components/SongItem";
+import { Lootbox } from '../../components/Lootbox';
 
 export const StakeView: FC = ({ children }) => {
 
@@ -193,18 +195,16 @@ export const StakeView: FC = ({ children }) => {
 
         </div>
 
-        {/* <div className="grid grid-cols-3 p-2">
-
-          <div className="flex flex-row">
-            <div className="gear-box">
-              GEAR
-            </div>
-            <div className="gear-box">
-              GEAR
-            </div>
-          </div>
-
-        </div> */}
+        {nftData && nftTokenAccount && (
+          <Lootbox
+            stakeAccount={stakingInfo}
+            nftTokenAccount={nftTokenAccount}
+            pinkTokenAccount={pinkTokenAccount}
+            fetchUpstreamState={() => {
+              updateViewInformation()
+            }}
+          />
+        )}
 
       </div>
     </div>
