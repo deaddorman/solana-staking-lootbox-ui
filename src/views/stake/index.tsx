@@ -195,7 +195,7 @@ export const StakeView: FC = ({ children }) => {
 
         </div>
 
-        {nftData && nftTokenAccount && (
+        {/* {nftData && nftTokenAccount && (
           <Lootbox
             stakeAccount={stakingInfo}
             nftTokenAccount={nftTokenAccount}
@@ -204,7 +204,7 @@ export const StakeView: FC = ({ children }) => {
               updateViewInformation()
             }}
           />
-        )}
+        )} */}
 
       </div>
     </div>
