@@ -449,8 +449,8 @@ export type LootboxProgram = {
       "msg": "Uninitialized Lootbox Pointer"
     }
   ],
-  "matadata": {
-    "address": "CFXdF9Dk9AMWheuqCgaRWZzokNuwjp6ktpZ1X4BJ2BJh"
+  "metadata": {
+      "address": "RANxjqM6cEzGSCuR2tNaAFB4WxRxyNfvPvUNiH7372y"
   }
 };
 
@@ -905,7 +905,7 @@ export const IDL: LootboxProgram = {
       "msg": "Uninitialized Lootbox Pointer"
     }
   ],
-  "matadata": {
-    "address": "CFXdF9Dk9AMWheuqCgaRWZzokNuwjp6ktpZ1X4BJ2BJh"
+  "metadata": {
+      "address": "RANxjqM6cEzGSCuR2tNaAFB4WxRxyNfvPvUNiH7372y"
   }
 };

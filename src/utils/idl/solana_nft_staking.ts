@@ -340,8 +340,8 @@ export type SolanaNftStaking = {
       "msg": "Stake state is invalid"
     }
   ],
-  "matadata": {
-    "address": "Aa1aRbhVaGMKJG6k17H5UwtneQtJwCWKZ3vLVRsWZNCN"
+  "metadata": {
+      "address": "G8PnyWaFUGqeAq1uqthR4axK7HTEwn1iii4Mds1aU4T6"
   }
 };
 
@@ -687,7 +687,7 @@ export const IDL: SolanaNftStaking = {
       "msg": "Stake state is invalid"
     }
   ],
-  "matadata": {
-    "address": "Aa1aRbhVaGMKJG6k17H5UwtneQtJwCWKZ3vLVRsWZNCN"
+  "metadata": {
+      "address": "G8PnyWaFUGqeAq1uqthR4axK7HTEwn1iii4Mds1aU4T6"
   }
 };
